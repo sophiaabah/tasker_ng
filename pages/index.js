@@ -50,7 +50,7 @@ export default function App() {
       <Head>
         <title>Welcome to Tasker</title>
       </Head>
-      <Flex px={{ md: 0, base: 6 }} direction="row" pt={12}>
+      <Flex px={{ md: 0, base: 6 }} direction="row" pt={{ md: 12, base: 10 }}>
         <Spacer />
         <ButtonGroup
           colorScheme="tasker_red"
@@ -82,7 +82,7 @@ export default function App() {
           spacing={{ md: 8, base: 9 }}
         >
           <Heading
-            px={{ md: 0, base: 6 }}
+            px={{ md: 0, base: 4 }}
             textAlign="center"
             fontWeight={800}
             fontSize={{ lg: "5rem", base: "3.625rem" }}
@@ -92,7 +92,7 @@ export default function App() {
             your time.
           </Heading>
           <Text
-            px={{ md: 0, base: 6 }}
+            px={{ md: 0, base: 4 }}
             textAlign="center"
             fontWeight={400}
             fontSize={{ md: "2xl", base: "xl" }}
@@ -157,17 +157,14 @@ export default function App() {
           >
             Everyday life made easier
           </Heading>
-          <Text
-            fontSize={{ md: "1.4rem", base: "xl" }}
-            fontWeight={{ md: 400, base: 300 }}
-          >
+          <Text fontSize={{ md: "1.4rem", base: "xl" }} fontWeight={400}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
             arcu, bibendum et libero integer ut. Non nisl turpis gravid
           </Text>
           <List
             pt={{ base: 2, md: 0 }}
             fontSize={{ md: "1.35rem", base: "xl" }}
-            fontWeight={{ md: 400, base: 300 }}
+            fontWeight={400}
             spacing={{ md: 2, base: 6 }}
           >
             <ListItem>
@@ -202,8 +199,8 @@ export default function App() {
             Thinking of offering your services?
           </Heading>
           <Text
-            fontSize="xl"
-            fontWeight={{ md: 400, base: 300 }}
+            fontSize={{ md: "1.35rem", base: "xl" }}
+            fontWeight={400}
             pb={{ md: "none", base: 4 }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
@@ -230,27 +227,32 @@ export default function App() {
       </Stack>
       <Box px={{ md: 12, base: 6 }} py={{ md: 4, base: "none" }}>
         <Stack
+          spacing={{ md: "none", base: 8 }}
           align="start"
           justify="space-between"
-          px={{ md: 16, base: 8 }}
+          px={{ md: 16, base: 6 }}
           py={{ md: 16, base: 10 }}
           borderRadius="xl"
           backgroundColor="tasker_sorbet.900"
           direction={{ md: "row", base: "column" }}
         >
-          <Stack direction="column" width={{ md: "40%" }}>
+          <Stack
+            spacing={{ md: "none", base: 5 }}
+            direction="column"
+            width={{ md: "40%" }}
+          >
             <Heading fontSize={{ md: "4xl", base: "3xl" }}>
               Join our mailing list
             </Heading>
-            <Text fontSize="xl">
+            <Text fontSize={{ md: "1.35rem", base: "1.18rem" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
-              arcu, bibendum et libero integer ut. Non nisl turpis gravid
+              arcu, bibendum et libero integer ut. Non nisl turpis gravid.
             </Text>
           </Stack>
           <Stack fontSize="xl" spacing={4}>
             <Stack direction={{ md: "row", base: "column" }} spacing={6}>
               <FormControl>
-                <FormLabel fontSize="1.15rem" htmlFor="Full name">
+                <FormLabel fontSize="lg" htmlFor="Full name">
                   Full name
                 </FormLabel>
                 <Input
@@ -261,7 +263,7 @@ export default function App() {
                 />
               </FormControl>
               <FormControl>
-                <FormLabel fontSize="1.15rem" htmlFor="Phone number">
+                <FormLabel fontSize="lg" htmlFor="Phone number">
                   Phone number
                 </FormLabel>
                 <Input
@@ -274,7 +276,7 @@ export default function App() {
             </Stack>
 
             <FormControl>
-              <FormLabel fontSize="1.15rem" htmlFor="Address">
+              <FormLabel fontSize="lg" htmlFor="Address">
                 Address
               </FormLabel>
               <Input
