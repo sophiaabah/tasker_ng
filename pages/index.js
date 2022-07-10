@@ -50,7 +50,7 @@ export default function App() {
       <Head>
         <title>Welcome to Tasker</title>
       </Head>
-      <Flex px={{ md: 0, base: 6 }} direction="row" pt={{ md: 12, base: 10 }}>
+      <Flex px={{ md: 0, base: 6 }} direction="row" pt={{ md: 12, base: 5 }}>
         <Spacer />
         <ButtonGroup
           colorScheme="tasker_red"
@@ -67,7 +67,7 @@ export default function App() {
             </Text>
           </Button>
           <Button px={{ md: 7, base: 5 }}>
-            <Text fontWeight={600} fontSize={{ md: "1.1rem", base: "0.95rem" }}>
+            <Text fontWeight={600} fontSize={{ md: "1.2rem", base: "0.95rem" }}>
               Sign up
             </Text>
           </Button>
@@ -102,7 +102,7 @@ export default function App() {
             nileqa sinudori.
           </Text>
           <Stack
-            px={{ md: 0, base: "1.19rem" }}
+            px={{ md: 0, base: "0.5rem" }}
             pt={{ md: 6, base: 3 }}
             direction="row"
             spacing={2}
@@ -137,7 +137,7 @@ export default function App() {
       <Stack
         px={{ md: 0, base: 6 }}
         backgroundColor={{ md: "#F8F8F8", base: "none" }}
-        direction={{ md: "row", base: "column" }}
+        direction={{ lg: "row", md: "column", base: "column" }}
       >
         <Image
           borderRadius={{ md: "none", base: "lg" }}
@@ -179,17 +179,17 @@ export default function App() {
         </Stack>
       </Stack>
       <Stack
-        px={{ md: 0, base: 6 }}
+        px={{ lg: 0, md: 14, base: 6 }}
         align="center"
         justify="space-between"
-        direction={{ md: "row", base: "column-reverse" }}
+        direction={{ lg: "row", md: "column-reverse", base: "column-reverse" }}
       >
         <Stack
-          paddingLeft={{ md: 24, base: 0 }}
+          paddingLeft={{ lg: 24, md: 0, base: 0 }}
           spacing={{ md: 8, base: 7 }}
-          width={{ md: "40%" }}
+          width={{ lg: "40%" }}
           justify="left"
-          direction={"column"}
+          direction="column"
         >
           <Heading
             fontSize={{ md: "4xl", base: "3xl" }}
@@ -208,7 +208,7 @@ export default function App() {
           </Text>
           <Button
             fontWeight={600}
-            fontSize="1.1rem"
+            fontSize="1.25rem"
             width={{ md: 48 }}
             height={{ md: 12 }}
             py={4}
@@ -219,27 +219,27 @@ export default function App() {
         </Stack>
         <Image
           boxSize={{ md: "md", base: "sm" }}
-          paddingRight={{ md: 32, base: 0 }}
+          paddingRight={{ lg: 32, md: 0, base: 0 }}
           transform={{ md: "none", base: 90 }}
           alt="an illustration with money"
           src="/images/hands.png"
         ></Image>
       </Stack>
-      <Box px={{ md: 12, base: 6 }} py={{ md: 4, base: "none" }}>
+      <Box px={{ md: 12, base: 6 }} py={{ lg: 4, md: 14, base: "none" }}>
         <Stack
-          spacing={{ md: "none", base: 8 }}
+          spacing={{ lg: "none", md: 10, base: 8 }}
           align="start"
           justify="space-between"
           px={{ md: 16, base: 6 }}
           py={{ md: 16, base: 10 }}
           borderRadius="xl"
           backgroundColor="tasker_sorbet.900"
-          direction={{ md: "row", base: "column" }}
+          direction={{ lg: "row", md: "column", base: "column" }}
         >
           <Stack
-            spacing={{ md: "none", base: 5 }}
+            spacing={{ lg: "none", md: 8, base: 5 }}
             direction="column"
-            width={{ md: "40%" }}
+            width={{ lg: "40%", md: "100%", sm: "100%" }}
           >
             <Heading fontSize={{ md: "4xl", base: "3xl" }}>
               Join our mailing list
@@ -325,7 +325,7 @@ export default function App() {
               </Stack>
             </Stack>
 
-            <Text pt={4} pb={4}>
+            <Text pt={4} pb={4} fontSize={{ md: "lg", base: "md" }}>
               By clicking sign up, you agree to the{" "}
               <chakra.span fontWeight={600}>Terms and Conditions</chakra.span>{" "}
               and <chakra.span fontWeight={600}>privacy policy</chakra.span>.
