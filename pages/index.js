@@ -122,7 +122,7 @@ export default function App() {
                     border="2px"
                     colorScheme="tasker_green"
                     fontWeight={500}
-                    fontSize={{ md: "1.1rem", base: "0.925rem" }}
+                    fontSize={{ md: "1.175rem", base: "1.05rem" }}
                     borderRadius={{ md: "xl", base: "0.8rem" }}
                   >
                     <Text color="black">{task}</Text>
