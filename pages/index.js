@@ -85,8 +85,8 @@ export default function App() {
             px={{ md: 0, base: 4 }}
             textAlign="center"
             fontWeight={800}
-            fontSize={{ lg: "5rem", base: "3.625rem" }}
-            letterSpacing={{ md: 1.2 }}
+            fontSize={{ lg: "5rem", base: "2.9rem" }}
+            letterSpacing={{ lg: 1.2 }}
           >
             Start making the <span style={{ color: "#B95050" }}>most</span> of
             your time.
@@ -117,7 +117,7 @@ export default function App() {
                 <WrapItem key={index}>
                   <Button
                     variant="outline"
-                    px={{ md: 7, base: 6 }}
+                    px={{ md: 7, base: 5 }}
                     py={{ md: 5, base: 2 }}
                     border="2px"
                     colorScheme="tasker_green"
