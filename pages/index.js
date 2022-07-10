@@ -102,14 +102,14 @@ export default function App() {
             nileqa sinudori.
           </Text>
           <Stack
-            px={{ md: 0, base: "0.5rem" }}
+            px={{ md: 0, base: "0.3rem" }}
             pt={{ md: 6, base: 3 }}
             direction="row"
             spacing={2}
             justifyContent={{ md: "center", base: "center" }}
           >
             <Wrap
-              spacing={{ md: 3, base: 3 }}
+              spacing={{ md: 3, base: 2.5 }}
               width={{ md: "120%" }}
               justify={{ md: "center", base: "center" }}
             >
@@ -241,7 +241,10 @@ export default function App() {
             direction="column"
             width={{ lg: "40%", md: "100%", sm: "100%" }}
           >
-            <Heading fontSize={{ md: "4xl", base: "3xl" }}>
+            <Heading
+              fontWeight={{ md: 600, base: 500 }}
+              fontSize={{ md: "4xl", base: "3xl" }}
+            >
               Join our mailing list
             </Heading>
             <Text fontSize={{ md: "1.35rem", base: "1.18rem" }}>
