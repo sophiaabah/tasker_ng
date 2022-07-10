@@ -75,7 +75,7 @@ export default function App() {
       </Flex>
       <Center>
         <Stack
-          pt={{ md: 8, base: 4 }}
+          pt={{ md: 8, base: 1.5 }}
           pb={{ md: 20, base: 2 }}
           maxW={{ md: "container.md" }}
           direction="column"
@@ -122,7 +122,7 @@ export default function App() {
                     border="2px"
                     colorScheme="tasker_green"
                     fontWeight={500}
-                    fontSize={{ md: "1.175rem", base: "1.05rem" }}
+                    fontSize={{ md: "1.175rem", base: "0.98rem" }}
                     borderRadius={{ md: "xl", base: "0.8rem" }}
                   >
                     <Text color="black">{task}</Text>
@@ -290,26 +290,28 @@ export default function App() {
               />
             </FormControl>
 
-            <Text pt={4}>What services do you need?</Text>
+            <Text fontSize="lg" pt={3}>
+              What services do you need?
+            </Text>
             <Stack
               alignItems={{ md: "none", base: "space-between" }}
               spacing={3}
             >
               <Stack direction="row">
                 <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="xl">Cleaning</Text>
+                  <Text fontSize="lg">Cleaning</Text>
                 </Checkbox>
                 <Checkbox value="Cooking" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="xl">Cleaning</Text>
+                  <Text fontSize="lg">Cleaning</Text>
                 </Checkbox>
               </Stack>
 
               <Stack direction="row">
                 <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="xl">Cleaning</Text>
+                  <Text fontSize="lg">Cleaning</Text>
                 </Checkbox>
                 <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="xl">Cleaning</Text>
+                  <Text fontSize="lg">Cleaning</Text>
                 </Checkbox>
               </Stack>
 
@@ -320,10 +322,10 @@ export default function App() {
                   value="Cooking"
                   flex={1}
                 >
-                  <Text fontSize="xl">Cleaning</Text>
+                  <Text fontSize="lg">Cleaning</Text>
                 </Checkbox>
                 <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="xl">Cleaning</Text>
+                  <Text fontSize="lg">Cleaning</Text>
                 </Checkbox>
               </Stack>
             </Stack>
