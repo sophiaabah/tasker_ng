@@ -1,0 +1,88 @@
+<Box px={{ md: 12, base: 6 }} py={{ lg: 4, md: 14, base: "none" }}>
+  <Stack
+    spacing={{ lg: "none", md: 10, base: 8 }}
+    align="start"
+    justify="space-between"
+    px={{ md: 16, base: 6 }}
+    py={{ md: 16, base: 10 }}
+    borderRadius="xl"
+    backgroundColor="tasker_sorbet.900"
+    direction={{ lg: "row", md: "column", base: "column" }}
+  >
+    <Stack fontSize="xl" spacing={4}>
+      <Stack direction={{ md: "row", base: "column" }} spacing={6}>
+        <FormControl>
+          <FormLabel fontSize="lg" htmlFor="Full name">
+            Full name
+          </FormLabel>
+          <Input
+            backgroundColor="white"
+            height={12}
+            id="Full name"
+            type="text"
+          />
+        </FormControl>
+        <FormControl>
+          <FormLabel fontSize="lg" htmlFor="Phone number">
+            Phone number
+          </FormLabel>
+          <Input
+            backgroundColor="white"
+            height={12}
+            id="Phone number"
+            type="number"
+          />
+        </FormControl>
+      </Stack>
+
+      <FormControl>
+        <FormLabel fontSize="lg" htmlFor="Address">
+          Address
+        </FormLabel>
+        <Input backgroundColor="white" height={12} id="Address" type="text" />
+      </FormControl>
+
+      <Text fontSize="lg" pt={3}>
+        What services do you need?
+      </Text>
+      <Stack alignItems={{ md: "none", base: "space-between" }} spacing={3}>
+        <Stack direction="row">
+          <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
+            <Text fontSize="lg">Cleaning</Text>
+          </Checkbox>
+          <Checkbox value="Cooking" borderColor="lightgrey" flex={1}>
+            <Text fontSize="lg">Cleaning</Text>
+          </Checkbox>
+        </Stack>
+
+        <Stack direction="row">
+          <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
+            <Text fontSize="lg">Cleaning</Text>
+          </Checkbox>
+          <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
+            <Text fontSize="lg">Cleaning</Text>
+          </Checkbox>
+        </Stack>
+
+        <Stack direction="row">
+          <Checkbox width={8} borderColor="lightgrey" value="Cooking" flex={1}>
+            <Text fontSize="lg">Cleaning</Text>
+          </Checkbox>
+          <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
+            <Text fontSize="lg">Cleaning</Text>
+          </Checkbox>
+        </Stack>
+      </Stack>
+
+      <Text pt={4} pb={4} fontSize={{ md: "lg", base: "md" }}>
+        By clicking sign up, you agree to the{" "}
+        <chakra.span fontWeight={600}>Terms and Conditions</chakra.span> and{" "}
+        <chakra.span fontWeight={600}>privacy policy</chakra.span>.
+      </Text>
+
+      <Button py={6} fontWeight={700} fontSize="xl" colorScheme="tasker_red">
+        Sign up
+      </Button>
+    </Stack>
+  </Stack>
+</Box>;

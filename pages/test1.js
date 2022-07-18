@@ -44,18 +44,24 @@ const arrOfTasks = [
   "Laundry",
 ];
 
+const arrOfBenefits = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
+];
+
 export default function App() {
   return (
-    <Stack spacing={8}>
+    <Stack spacing={10}>
       <Head>
         <title>Welcome to Tasker</title>
       </Head>
-      <Flex px={{ md: 0, base: 6 }} direction="row" pt={{ md: 12, base: 5 }}>
+      <Flex px={{ md: 10, base: 6 }} direction="row" pt={{ md: 8, base: 5 }}>
         <Spacer />
         <ButtonGroup
           colorScheme="tasker_red"
           spacing={6}
-          paddingRight={{ md: 8, base: "none" }}
+          paddingRight={{ md: 0, base: "none" }}
         >
           <Button px={{ md: 7, base: 5 }}>
             <Text fontWeight={600} fontSize={{ md: "1.2rem", base: "0.95rem" }}>
@@ -64,79 +70,87 @@ export default function App() {
           </Button>
         </ButtonGroup>
       </Flex>
-      <Center>
+
+      <Stack>
         <Stack
-          pt={{ md: 8, base: 1.5 }}
-          pb={{ md: 20, base: 2 }}
-          maxW={{ md: "container.md" }}
-          direction="column"
-          spacing={{ md: 8, base: 9 }}
+          justify="end"
+          height="71vh"
+          bgImage=" linear-gradient(0deg, rgba(0, 0, 0, 75%), rgba(0, 0, 0, 0%)), url('/images/nice.jpg')"
+          bgPosition="bottom"
+          bgRepeat="no-repeat"
+          bgSize="cover"
         >
-          <Heading
-            px={{ md: 0, base: 4 }}
-            textAlign="center"
-            fontWeight={800}
-            fontSize={{ lg: "5rem", base: "2.9rem" }}
-            letterSpacing={{ lg: 1.2 }}
-          >
-            Start making the <span style={{ color: "#B95050" }}>most</span> of
-            your time.
-          </Heading>
-          <Text
-            px={{ md: 0, base: 4 }}
-            textAlign="center"
-            fontWeight={400}
-            fontSize={{ md: "2xl", base: "xl" }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
-            arcu, bibendum et libero integer ut. Non nisl turpis gravidiso
-            nileqa sinudori.
-          </Text>
-          <Stack
-            px={{ md: 0, base: "0.3rem" }}
-            pt={{ md: 6, base: 3 }}
-            direction="row"
-            spacing={2}
-            justifyContent={{ md: "center", base: "center" }}
-          >
-            <Wrap
-              spacing={{ md: 3, base: 2.5 }}
-              width={{ md: "120%" }}
-              justify={{ md: "center", base: "center" }}
+          <Stack spacing={4} width="60%" px={14} py={20}>
+            <Heading
+              fontWeight={800}
+              fontSize={{ lg: "5xl", base: "2.9rem" }}
+              color="white"
             >
-              {arrOfTasks.map((task, index) => (
-                <WrapItem key={index}>
-                  <Button
-                    variant="outline"
-                    px={{ md: 7, base: 5 }}
-                    py={{ md: 5, base: 2 }}
-                    border="2px"
-                    colorScheme="tasker_green"
-                    fontWeight={500}
-                    fontSize={{ md: "1.175rem", base: "0.98rem" }}
-                    borderRadius={{ md: "xl", base: "0.8rem" }}
-                  >
-                    <Text color="black">{task}</Text>
-                  </Button>
-                </WrapItem>
-              ))}
-            </Wrap>
+              Ask now.
+            </Heading>
+            <Text
+              fontWeight={600}
+              fontSize={{ lg: "1.7rem", base: "2.9rem" }}
+              color="white"
+            >
+              {" "}
+              Get a list of highly verified taskers for all your household tasks
+              with one click.
+            </Text>
           </Stack>
         </Stack>
-      </Center>
+      </Stack>
+
+      <Stack>
+        <Stack pt={10} spacing={6} align="center">
+          <Heading
+            textAlign="center"
+            fontWeight={600}
+            fontSize={{ lg: "3xl", base: "2.9rem" }}
+          >
+            Lorem ipsum minvoati.
+          </Heading>
+          <Text width="lg" fontSize="xl" textAlign="center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
+            arcu, bibendum et libero integer ut.
+          </Text>
+          <Stack pt={4} spacing={6} justify="center" direction="row">
+            {arrOfBenefits.map((benefit, index) => (
+              <Box
+                key={index}
+                boxSize="20%"
+                borderColor="tasker_red.300"
+                border="2px"
+                borderRadius="md"
+                px={8}
+                py={12}
+              >
+                {" "}
+                <Text fontSize="lg" textAlign="center">
+                  {benefit}
+                </Text>
+              </Box>
+            ))}
+          </Stack>
+        </Stack>
+      </Stack>
 
       <Stack
+        pb={12}
+        pt={10}
+        spacing={0}
         px={{ md: 0, base: 6 }}
-        backgroundColor={{ md: "#F8F8F8", base: "none" }}
         direction={{ lg: "row", md: "column", base: "column" }}
       >
         <Image
+          boxSize="40%"
           borderRadius={{ md: "none", base: "lg" }}
           alt="a girl cleaning"
-          src="/images/cleaning.jpg"
+          src="/images/singing.jpg"
         ></Image>
 
         <Stack
+          backgroundColor={{ md: "#F8F8F8", base: "none" }}
           spacing={{ md: 8, base: 5 }}
           py={{ md: 24, base: 18 }}
           px={{ md: 20, base: 0 }}
@@ -170,7 +184,7 @@ export default function App() {
         </Stack>
       </Stack>
 
-      <Box px={{ md: 12, base: 6 }} py={{ lg: 4, md: 14, base: "none" }}>
+      <Box px={{ md: 10, base: 6 }} py={{ lg: 4, md: 14, base: "none" }}>
         <Stack
           spacing={{ lg: "none", md: 10, base: 8 }}
           align="start"
@@ -292,6 +306,7 @@ export default function App() {
           </Stack>
         </Stack>
       </Box>
+
       <Flex align="center" direction="row" pr={8}>
         <Spacer />
         <Text fontSize="md" pr={6}>
