@@ -72,14 +72,21 @@ export default function App() {
       </Flex>
 
       <Stack
-        direction="row"
-        height="71vh"
+        direction={{ lg: "row", base: "column" }}
+        height={{ md: "71vh", base: "85vh" }}
         bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.85) 5.25%, rgba(0, 0, 0, 0.6) 49.28%, rgba(0, 0, 0, 0.17) 95.58%), url('/images/nice.jpg')"
-        bgPosition="bottom"
+        bgPosition={{ md: "bottom", base: "center" }}
         bgRepeat="no-repeat"
         bgSize="cover"
+        justify={{ md: "none", base: "center" }}
       >
-        <Stack alignSelf="center" spacing={4} width="60%" px={20} py={20}>
+        <Stack
+          alignSelf={{ md: "center", base: "none" }}
+          spacing={4}
+          width={{ md: "60%", base: "100%" }}
+          px={{ md: 20, base: 12 }}
+          py={{ md: 20, base: 0 }}
+        >
           <Heading
             fontWeight={800}
             fontSize={{ lg: "5xl", base: "2.9rem" }}
@@ -89,15 +96,16 @@ export default function App() {
           </Heading>
           <Text
             fontWeight={600}
-            fontSize={{ lg: "1.7rem", base: "2.9rem" }}
+            fontSize={{ lg: "1.7rem", base: "1.2rem" }}
             color="white"
           >
             {" "}
-            Get a list of highly verified taskers for all your household tasks
+            Get a list of highly verified taskers for all your household needs
             with one click.
           </Text>
         </Stack>
         <Stack
+          display={{ md: "block", base: "none" }}
           spacing={5}
           justify="center"
           alignSelf="center"
@@ -165,8 +173,18 @@ export default function App() {
         </Stack>
       </Stack>
 
-      <Stack p={16} justify="space-around" direction="row">
-        <Stack justify="center" width="xl" spacing={4} alignSelf="center">
+      <Stack
+        p={{ md: 16, base: 8 }}
+        spacing={{ md: "none", base: 8 }}
+        justify={{ md: "space-around", base: "none" }}
+        direction={{ lg: "row", base: "column-reverse" }}
+      >
+        <Stack
+          justify="center"
+          width={{ md: "xl", base: "100%" }}
+          spacing={4}
+          alignSelf="center"
+        >
           <Heading fontSize="2.75rem">
             Start making the most of your time.
           </Heading>
@@ -176,7 +194,8 @@ export default function App() {
           </Text>
         </Stack>
         <Image
-          borderRadius={{ md: "md", base: "lg" }}
+          display={{ md: "block", base: "none" }}
+          borderRadius={{ md: "md", base: "md" }}
           alt="a girl cleaning"
           src="/images/fixing.jpg"
         ></Image>
@@ -185,11 +204,11 @@ export default function App() {
       <Stack
         backgroundColor={{ md: "#F8F8F8", base: "none" }}
         spacing={8}
-        px={{ md: 0, base: 6 }}
+        px={{ md: 0, base: 8 }}
         direction={{ lg: "row", md: "column", base: "column" }}
       >
         <Image
-          boxSize="lg"
+          boxSize={{ md: "lg", base: "none" }}
           borderRadius={{ md: "none", base: "lg" }}
           alt="a girl cleaning"
           src="/images/singing.jpg"
@@ -201,7 +220,7 @@ export default function App() {
           spacing={{ md: 4, base: 5 }}
           py={{ md: 24, base: 18 }}
           px={{ md: 20, base: 0 }}
-          width="3xl"
+          width={{ md: "3xl", base: "none" }}
           direction="column"
         >
           <Heading fontSize="2.75rem">Everyday life made easier</Heading>
@@ -212,13 +231,24 @@ export default function App() {
         </Stack>
       </Stack>
 
-      <Stack pt={16} pb={6} justify="space-around" direction="row">
-        <Stack justify="center" width="xl" spacing={4} alignSelf="center">
+      <Stack
+        px={{ md: "none", base: 8 }}
+        pt={16}
+        pb={6}
+        justify={{ md: "space-around", base: "none" }}
+        direction={{ lg: "row", base: "column-reverse" }}
+      >
+        <Stack
+          justify="center"
+          width={{ md: "xl", base: "none" }}
+          spacing={4}
+          alignSelf={{ md: "center", base: "none" }}
+        >
           <Heading fontSize="2.75rem">Lorem ipsum.</Heading>
           <Text fontSize="2xl">Enjoy the ease of cash-free payments.</Text>
         </Stack>
         <Image
-          width="40%"
+          width={{ md: "40%", base: "none%" }}
           borderRadius={{ md: "md", base: "lg" }}
           alt="a girl cleaning"
           src="/images/fixerin.jpg"
