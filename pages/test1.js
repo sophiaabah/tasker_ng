@@ -4,6 +4,7 @@ import {
   Image,
   Center,
   Spacer,
+  Link,
   List,
   ListItem,
   ListIcon,
@@ -32,17 +33,7 @@ import { useRouter } from "next/router";
 import { HiCheck } from "react-icons/hi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
-const arrOfTasks = [
-  "Cooking",
-  "Cleaning",
-  "Plumbing",
-  "Carpentry",
-  "Electrician",
-  "Mechanic",
-  "Dish washing",
-  "Shopping",
-  "Laundry",
-];
+const arrOfTasks = ["Cooking", "Cleaning", "Plumbing", "Carpentry", "Electrician", "Mechanic", "Dish washing", "Shopping", "Laundry"];
 
 const arrOfBenefits = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
@@ -56,120 +47,122 @@ export default function App() {
       <Head>
         <title>Welcome to Tasker</title>
       </Head>
-      <Flex px={{ md: 10, base: 6 }} direction="row" pt={{ md: 5, base: 5 }}>
-        <Spacer />
-        <ButtonGroup
-          colorScheme="tasker_red"
-          spacing={6}
-          paddingRight={{ md: 0, base: "none" }}
-        >
-          <Button px={{ md: 7, base: 5 }}>
-            <Text fontWeight={600} fontSize={{ md: "1.2rem", base: "0.95rem" }}>
-              Sign up
-            </Text>
-          </Button>
-        </ButtonGroup>
-      </Flex>
 
       <Stack
-        direction={{ lg: "row", base: "column" }}
-        height={{ md: "71vh", base: "85vh" }}
-        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.85) 5.25%, rgba(0, 0, 0, 0.6) 49.28%, rgba(0, 0, 0, 0.17) 95.58%), url('/images/nice.jpg')"
-        bgPosition={{ md: "bottom", base: "center" }}
+        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.85) 5.25%, rgba(0, 0, 0, 0.7) 49.28%), url('/images/nice.jpg')"
+        bgPosition={{ md: "center", base: "center" }}
+        px={{ md: 20, base: 6 }}
         bgRepeat="no-repeat"
         bgSize="cover"
-        justify={{ md: "none", base: "center" }}
       >
-        <Stack
-          alignSelf={{ md: "center", base: "none" }}
-          spacing={4}
-          width={{ md: "60%", base: "100%" }}
-          px={{ md: 20, base: 12 }}
-          py={{ md: 20, base: 0 }}
-        >
-          <Heading
-            fontWeight={800}
-            fontSize={{ lg: "5xl", base: "2.9rem" }}
-            color="white"
+        <Flex direction="row" pt={{ md: 5, base: 5 }}>
+          <Stack direction="row" ml="auto !important" alignItems="center" spacing={6}>
+            <Link color="#fff">Benefits</Link>
+
+            <Button variant="solid" colorScheme="tasker_red">
+              Get Started
+            </Button>
+          </Stack>
+        </Flex>
+
+        <Stack direction={{ md: "row", base: "column" }} justify={{ md: "space-between", base: "center" }} py={{ md: 14, base: 7 }}>
+          <Stack
+            spacing={{ md: 4, base: 6 }}
+            width={{ md: "40%", base: "100%" }}
+            py={{ md: 20, base: 10 }}
+            textAlign={{ base: "center", md: "left" }}
           >
-            Ask now.
-          </Heading>
-          <Text
-            fontWeight={600}
-            fontSize={{ lg: "1.7rem", base: "1.2rem" }}
-            color="white"
-          >
-            {" "}
-            Get a list of highly verified taskers for all your household needs
-            with one click.
-          </Text>
-        </Stack>
-        <Stack
-          display={{ md: "block", base: "none" }}
-          spacing={5}
-          justify="center"
-          alignSelf="center"
-          px={10}
-          height="xl"
-          width="md"
-          borderRadius="md"
-          backgroundColor="white"
-        >
-          <Stack spacing={4}>
-            <Input height="3rem" placeholder="Full name"></Input>
-            <Input height="3rem" placeholder="Phone number"></Input>
-            <Input height="3rem" placeholder="Adddress"></Input>
+            <Heading color="white" fontWeight={800} fontSize={{ lg: "6xl", base: "4xl" }}>
+              Start making the most of your time!
+            </Heading>
+            <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="md">
+              Get a list of highly verified taskers for all your household needs with one click.
+            </Text>
           </Stack>
 
-          <Text fontSize="1.175rem">What services do you need?</Text>
-          <Stack spacing={3}>
-            <Stack direction="row">
-              <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
-                <Text fontSize="lg">Cleaning</Text>
-              </Checkbox>
-              <Checkbox value="Cooking" borderColor="lightgrey" flex={1}>
-                <Text fontSize="lg">Cleaning</Text>
-              </Checkbox>
-            </Stack>
-
-            <Stack direction="row">
-              <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
-                <Text fontSize="lg">Cleaning</Text>
-              </Checkbox>
-              <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
-                <Text fontSize="lg">Cleaning</Text>
-              </Checkbox>
-            </Stack>
-
-            <Stack direction="row">
-              <Checkbox
-                width={8}
-                borderColor="lightgrey"
-                value="Cooking"
-                flex={1}
-              >
-                <Text fontSize="lg">Cleaning</Text>
-              </Checkbox>
-              <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
-                <Text fontSize="lg">Cleaning</Text>
-              </Checkbox>
-            </Stack>
-          </Stack>
-
-          <Text pb={2} pt={1} fontSize={{ md: "md", base: "md" }}>
-            By clicking sign up, you agree to the{" "}
-            <chakra.span fontWeight={600}>Terms and Conditions</chakra.span> and{" "}
-            <chakra.span fontWeight={600}>privacy policy</chakra.span>.
-          </Text>
-
-          <Button
+          <Stack
+            spacing={4}
+            justify="center"
+            alignSelf="center"
+            maxW="md"
             py={6}
-            fontWeight={700}
-            fontSize="xl"
-            colorScheme="tasker_red"
+            px={{ md: 10, base: 6 }}
+            borderRadius="md"
+            backgroundColor="white"
           >
-            Sign up
-          </Button>
+            <Heading fontSize="3xl" fontWeight={700} pb={2}>
+              Ask Now!
+            </Heading>
+
+            <Stack spacing={4}>
+              <Stack spacing={2} direction="row">
+                <FormControl>
+                  <FormLabel fontSize="sm">Name</FormLabel>
+                  <Input px={2} type="text" placeholder="John Obi" />
+                </FormControl>
+
+                <FormControl>
+                  <FormLabel fontSize="sm">Email</FormLabel>
+                  <Input type="email" px={2} placeholder="johnobi@email.com" />
+                </FormControl>
+              </Stack>
+
+              <Stack spacing={2} direction="row">
+                <FormControl>
+                  <FormLabel fontSize="sm">Phone</FormLabel>
+                  <Input px={2} type="tel" placeholder="0123456789" />
+                </FormControl>
+
+                <FormControl>
+                  <FormLabel fontSize="sm">Address</FormLabel>
+                  <Input type="text" px={2} placeholder="Lekki, Lagos" />
+                </FormControl>
+              </Stack>
+            </Stack>
+
+            <Text pt={2}>What services do you need?</Text>
+            <Stack spacing={2}>
+              <Stack direction="row">
+                <Checkbox value="Cleaning" flex={1}>
+                  <Text>Cleaning</Text>
+                </Checkbox>
+                <Checkbox value="Cooking" flex={1}>
+                  <Text>Cooking</Text>
+                </Checkbox>
+                <Checkbox value="Cooking" flex={1}>
+                  <Text>Shopping</Text>
+                </Checkbox>
+              </Stack>
+
+              <Stack direction="row">
+                <Checkbox value="Cleaning" flex={1}>
+                  <Text>Cleaning</Text>
+                </Checkbox>
+                <Checkbox value="Cooking" flex={1}>
+                  <Text>Cooking</Text>
+                </Checkbox>
+                <Checkbox value="Cooking" flex={1}>
+                  <Text>Shopping</Text>
+                </Checkbox>
+              </Stack>
+            </Stack>
+
+            <Text pb={2} pt={1} fontSize="sm" color="rgb(0 0 0 / 55%)">
+              By continuing, you agree to the{" "}
+              <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
+                Terms and Conditions
+              </chakra.span>{" "}
+              and{" "}
+              <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
+                privacy policy
+              </chakra.span>
+              .
+            </Text>
+
+            <Button py={6} fontWeight={700} fontSize="lg" colorScheme="tasker_red">
+              Contact Us
+            </Button>
+          </Stack>
         </Stack>
       </Stack>
 
@@ -179,19 +172,9 @@ export default function App() {
         justify={{ md: "space-around", base: "none" }}
         direction={{ lg: "row", base: "column-reverse" }}
       >
-        <Stack
-          justify="center"
-          width={{ md: "xl", base: "100%" }}
-          spacing={4}
-          alignSelf="center"
-        >
-          <Heading fontSize="2.75rem">
-            Start making the most of your time.
-          </Heading>
-          <Text fontSize="2xl">
-            Compare pricing, rating and availability to make a better selection,
-            easy-peasy.
-          </Text>
+        <Stack justify="center" width={{ md: "xl", base: "100%" }} spacing={4} alignSelf="center">
+          <Heading fontSize="2.75rem">Start making the most of your time.</Heading>
+          <Text fontSize="2xl">Compare pricing, rating and availability to make a better selection, easy-peasy.</Text>
         </Stack>
         <Image
           display={{ md: "block", base: "none" }}
@@ -225,8 +208,7 @@ export default function App() {
         >
           <Heading fontSize="2.75rem">Everyday life made easier</Heading>
           <Text fontSize={{ md: "2xl", base: "xl" }} fontWeight={400}>
-            Chat with your tasker to discuss the details of the task you want to
-            get done.
+            Chat with your tasker to discuss the details of the task you want to get done.
           </Text>
         </Stack>
       </Stack>
@@ -238,12 +220,7 @@ export default function App() {
         justify={{ md: "space-around", base: "none" }}
         direction={{ lg: "row", base: "column-reverse" }}
       >
-        <Stack
-          justify="center"
-          width={{ md: "xl", base: "none" }}
-          spacing={4}
-          alignSelf={{ md: "center", base: "none" }}
-        >
+        <Stack justify="center" width={{ md: "xl", base: "none" }} spacing={4} alignSelf={{ md: "center", base: "none" }}>
           <Heading fontSize="2.75rem">Lorem ipsum.</Heading>
           <Text fontSize="2xl">Enjoy the ease of cash-free payments.</Text>
         </Stack>

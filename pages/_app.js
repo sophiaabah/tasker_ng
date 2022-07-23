@@ -32,8 +32,8 @@ const colors = {
 };
 
 const fonts = {
-  heading: "Fira Sans, sans-serif",
-  body: "Source sans pro, sans-serif",
+  heading: "Poppins, sans-serif",
+  body: "Source Sans Pro, sans-serif",
 };
 
 const theme = extendTheme({ colors, fonts });
