@@ -33,12 +33,16 @@ import { useRouter } from "next/router";
 import { HiCheck } from "react-icons/hi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
-const arrOfTasks = ["Cooking", "Cleaning", "Plumbing", "Carpentry", "Electrician", "Mechanic", "Dish washing", "Shopping", "Laundry"];
-
-const arrOfBenefits = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit arcu, bibendum et libero integer ut.",
+const arrOfTasks = [
+  "Cooking",
+  "Cleaning",
+  "Plumbing",
+  "Carpentry",
+  "Electrician",
+  "Mechanic",
+  "Dish washing",
+  "Shopping",
+  "Laundry",
 ];
 
 export default function App() {
@@ -56,7 +60,12 @@ export default function App() {
         bgSize="cover"
       >
         <Flex direction="row" pt={{ md: 5, base: 5 }}>
-          <Stack direction="row" ml="auto !important" alignItems="center" spacing={6}>
+          <Stack
+            direction="row"
+            ml="auto !important"
+            alignItems="center"
+            spacing={6}
+          >
             <Link color="#fff">Benefits</Link>
 
             <Button variant="solid" colorScheme="tasker_red">
@@ -65,18 +74,28 @@ export default function App() {
           </Stack>
         </Flex>
 
-        <Stack direction={{ md: "row", base: "column" }} justify={{ md: "space-between", base: "center" }} py={{ md: 14, base: 7 }}>
+        <Stack
+          direction={{ md: "row", base: "column" }}
+          justify={{ md: "space-between", base: "center" }}
+          py={{ md: 14, base: 7 }}
+        >
           <Stack
-            spacing={{ md: 4, base: 6 }}
-            width={{ md: "40%", base: "100%" }}
+            alignSelf="center"
+            spacing={{ md: 6, base: 6 }}
+            width={{ md: "45%", base: "100%" }}
             py={{ md: 20, base: 10 }}
             textAlign={{ base: "center", md: "left" }}
           >
-            <Heading color="white" fontWeight={800} fontSize={{ lg: "6xl", base: "4xl" }}>
+            <Heading
+              color="white"
+              fontWeight={800}
+              fontSize={{ lg: "6xl", base: "4xl" }}
+            >
               Start making the most of your time!
             </Heading>
-            <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="md">
-              Get a list of highly verified taskers for all your household needs with one click.
+            <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="xl">
+              Get a list of highly verified taskers for all your household needs
+              with one click.
             </Text>
           </Stack>
 
@@ -102,17 +121,12 @@ export default function App() {
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">Email</FormLabel>
-                  <Input type="email" px={2} placeholder="johnobi@email.com" />
+                  <FormLabel fontSize="sm">Phone</FormLabel>
+                  <Input px={2} type="tel" placeholder="0123456789" />
                 </FormControl>
               </Stack>
 
               <Stack spacing={2} direction="row">
-                <FormControl>
-                  <FormLabel fontSize="sm">Phone</FormLabel>
-                  <Input px={2} type="tel" placeholder="0123456789" />
-                </FormControl>
-
                 <FormControl>
                   <FormLabel fontSize="sm">Address</FormLabel>
                   <Input type="text" px={2} placeholder="Lekki, Lagos" />
@@ -124,25 +138,37 @@ export default function App() {
             <Stack spacing={2}>
               <Stack direction="row">
                 <Checkbox value="Cleaning" flex={1}>
-                  <Text>Cleaning</Text>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Cleaning</Text>
                 </Checkbox>
                 <Checkbox value="Cooking" flex={1}>
-                  <Text>Cooking</Text>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Cooking</Text>
                 </Checkbox>
-                <Checkbox value="Cooking" flex={1}>
-                  <Text>Shopping</Text>
+                <Checkbox value="Plumbing" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Plumbing</Text>
                 </Checkbox>
               </Stack>
 
               <Stack direction="row">
-                <Checkbox value="Cleaning" flex={1}>
-                  <Text>Cleaning</Text>
+                <Checkbox value="Carpentry" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Carpentry</Text>
                 </Checkbox>
-                <Checkbox value="Cooking" flex={1}>
-                  <Text>Cooking</Text>
+                <Checkbox value="Electrician" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Electrician</Text>
                 </Checkbox>
-                <Checkbox value="Cooking" flex={1}>
-                  <Text>Shopping</Text>
+                <Checkbox value="Mechanic" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Mechanic</Text>
+                </Checkbox>
+              </Stack>
+
+              <Stack direction="row">
+                <Checkbox value="Shopping" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Shopping</Text>
+                </Checkbox>
+                <Checkbox value="Laundry" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Laundry</Text>
+                </Checkbox>
+                <Checkbox value="Other" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Other</Text>
                 </Checkbox>
               </Stack>
             </Stack>
@@ -159,7 +185,12 @@ export default function App() {
               .
             </Text>
 
-            <Button py={6} fontWeight={700} fontSize="lg" colorScheme="tasker_red">
+            <Button
+              py={6}
+              fontWeight={700}
+              fontSize="lg"
+              colorScheme="tasker_red"
+            >
               Contact Us
             </Button>
           </Stack>
@@ -172,9 +203,19 @@ export default function App() {
         justify={{ md: "space-around", base: "none" }}
         direction={{ lg: "row", base: "column-reverse" }}
       >
-        <Stack justify="center" width={{ md: "xl", base: "100%" }} spacing={4} alignSelf="center">
-          <Heading fontSize="2.75rem">Start making the most of your time.</Heading>
-          <Text fontSize="2xl">Compare pricing, rating and availability to make a better selection, easy-peasy.</Text>
+        <Stack
+          justify="center"
+          width={{ md: "xl", base: "100%" }}
+          spacing={4}
+          alignSelf="center"
+        >
+          <Heading fontSize="2.75rem">
+            Start making the most of your time.
+          </Heading>
+          <Text fontSize={{ md: "2xl", base: "xl" }}>
+            Compare pricing, rating and availability to make a better selection,
+            easy-peasy.
+          </Text>
         </Stack>
         <Image
           display={{ md: "block", base: "none" }}
@@ -185,47 +226,54 @@ export default function App() {
       </Stack>
 
       <Stack
-        backgroundColor={{ md: "#F8F8F8", base: "none" }}
-        spacing={8}
-        px={{ md: 0, base: 8 }}
+        justify={{ md: "space-around", base: "none" }}
+        px={{ md: 8, base: 8 }}
         direction={{ lg: "row", md: "column", base: "column" }}
       >
         <Image
+          width={{ md: "40%", base: "none" }}
+          borderRadius={{ md: "md", base: "lg" }}
           boxSize={{ md: "lg", base: "none" }}
-          borderRadius={{ md: "none", base: "lg" }}
           alt="a girl cleaning"
           src="/images/singing.jpg"
         ></Image>
 
         <Stack
           alignSelf="center"
-          backgroundColor={{ md: "#F8F8F8", base: "none" }}
           spacing={{ md: 4, base: 5 }}
           py={{ md: 24, base: 18 }}
           px={{ md: 20, base: 0 }}
           width={{ md: "3xl", base: "none" }}
           direction="column"
         >
-          <Heading fontSize="2.75rem">Everyday life made easier</Heading>
+          <Heading fontSize="2.75rem">Everyday life made easier.</Heading>
           <Text fontSize={{ md: "2xl", base: "xl" }} fontWeight={400}>
-            Chat with your tasker to discuss the details of the task you want to get done.
+            Chat with your tasker to discuss the details of the task you want to
+            get done.
           </Text>
         </Stack>
       </Stack>
 
       <Stack
+        spacing={{ md: "none", base: 8 }}
         px={{ md: "none", base: 8 }}
-        pt={16}
-        pb={6}
+        pb={4}
         justify={{ md: "space-around", base: "none" }}
         direction={{ lg: "row", base: "column-reverse" }}
       >
-        <Stack justify="center" width={{ md: "xl", base: "none" }} spacing={4} alignSelf={{ md: "center", base: "none" }}>
+        <Stack
+          justify="center"
+          width={{ md: "xl", base: "none" }}
+          spacing={4}
+          alignSelf={{ md: "center", base: "none" }}
+        >
           <Heading fontSize="2.75rem">Lorem ipsum.</Heading>
-          <Text fontSize="2xl">Enjoy the ease of cash-free payments.</Text>
+          <Text fontSize={{ md: "2xl", base: "xl" }}>
+            Enjoy the ease of cash-free payments.
+          </Text>
         </Stack>
         <Image
-          width={{ md: "40%", base: "none%" }}
+          width={{ md: "40%", base: "none" }}
           borderRadius={{ md: "md", base: "lg" }}
           alt="a girl cleaning"
           src="/images/fixerin.jpg"
