@@ -91,7 +91,7 @@ export default function App() {
               fontWeight={800}
               fontSize={{ lg: "6xl", base: "4xl" }}
             >
-              Start making the most of your time!
+              Start making the most of your time.
             </Heading>
             <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="xl">
               Get a list of highly verified taskers for all your household needs
@@ -103,13 +103,13 @@ export default function App() {
             spacing={4}
             justify="center"
             alignSelf="center"
-            maxW="md"
+            maxW={{ md: "lg", base: "md" }}
             py={6}
             px={{ md: 10, base: 6 }}
             borderRadius="md"
             backgroundColor="white"
           >
-            <Heading fontSize="3xl" fontWeight={700} pb={2}>
+            <Heading fontSize="3xl" fontWeight={600} pb={2}>
               Ask Now!
             </Heading>
 
