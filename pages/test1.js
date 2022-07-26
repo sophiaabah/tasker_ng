@@ -53,7 +53,7 @@ export default function App() {
       </Head>
 
       <Stack
-        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.85) 5.25%, rgba(0, 0, 0, 0.7) 49.28%), url('/images/nice.jpg')"
+        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.7) 10.36%, rgba(0, 0, 0, 0.65) 52.28%, rgba(0, 0, 0, 0.2) 95.58%), url('/images/hero.jpg')"
         bgPosition={{ md: "center", base: "center" }}
         px={{ md: 20, base: 6 }}
         bgRepeat="no-repeat"
@@ -103,7 +103,7 @@ export default function App() {
             spacing={4}
             justify="center"
             alignSelf="center"
-            maxW={{ md: "lg", base: "md" }}
+            maxW={{ md: "md", base: "md" }}
             py={6}
             px={{ md: 10, base: 6 }}
             borderRadius="md"
