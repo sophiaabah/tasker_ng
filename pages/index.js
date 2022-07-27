@@ -4,6 +4,7 @@ import {
   Image,
   Center,
   Spacer,
+  Link,
   List,
   ListItem,
   ListIcon,
@@ -30,6 +31,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { HiCheck } from "react-icons/hi";
+import { MdCheckCircle } from "react-icons/md";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 
 const arrOfTasks = [
@@ -46,263 +48,262 @@ const arrOfTasks = [
 
 export default function App() {
   return (
-    <Stack spacing={8}>
+    <Stack spacing={5}>
       <Head>
         <title>Welcome to Tasker</title>
       </Head>
-      <Flex px={{ md: 0, base: 6 }} direction="row" pt={{ md: 12, base: 5 }}>
-        <Spacer />
-        <ButtonGroup
-          colorScheme="tasker_red"
-          spacing={6}
-          paddingRight={{ md: 8, base: "none" }}
-        >
-          <Button px={{ md: 7, base: 5 }}>
-            <Text fontWeight={600} fontSize={{ md: "1.2rem", base: "0.95rem" }}>
-              Sign up
-            </Text>
-          </Button>
-        </ButtonGroup>
-      </Flex>
-      <Center>
-        <Stack
-          pt={{ md: 8, base: 1.5 }}
-          pb={{ md: 20, base: 2 }}
-          maxW={{ md: "container.md" }}
-          direction="column"
-          spacing={{ md: 8, base: 9 }}
-        >
-          <Heading
-            px={{ md: 0, base: 4 }}
-            textAlign="center"
-            fontWeight={800}
-            fontSize={{ lg: "5rem", base: "2.9rem" }}
-            letterSpacing={{ lg: 1.2 }}
-          >
-            Start making the <span style={{ color: "#B95050" }}>most</span> of
-            your time.
-          </Heading>
-          <Text
-            px={{ md: 0, base: 4 }}
-            textAlign="center"
-            fontWeight={400}
-            fontSize={{ md: "2xl", base: "xl" }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
-            arcu, bibendum et libero integer ut. Non nisl turpis gravidiso
-            nileqa sinudori.
-          </Text>
-          <Stack
-            px={{ md: 0, base: "0.3rem" }}
-            pt={{ md: 6, base: 3 }}
-            direction="row"
-            spacing={2}
-            justifyContent={{ md: "center", base: "center" }}
-          >
-            <Wrap
-              spacing={{ md: 3, base: 2.5 }}
-              width={{ md: "120%" }}
-              justify={{ md: "center", base: "center" }}
-            >
-              {arrOfTasks.map((task, index) => (
-                <WrapItem key={index}>
-                  <Button
-                    variant="outline"
-                    px={{ md: 7, base: 5 }}
-                    py={{ md: 5, base: 2 }}
-                    border="2px"
-                    colorScheme="tasker_green"
-                    fontWeight={500}
-                    fontSize={{ md: "1.175rem", base: "0.98rem" }}
-                    borderRadius={{ md: "xl", base: "0.8rem" }}
-                  >
-                    <Text color="black">{task}</Text>
-                  </Button>
-                </WrapItem>
-              ))}
-            </Wrap>
-          </Stack>
-        </Stack>
-      </Center>
 
       <Stack
-        px={{ md: 0, base: 6 }}
-        backgroundColor={{ md: "#F8F8F8", base: "none" }}
-        direction={{ lg: "row", md: "column", base: "column" }}
+        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.7) 10.36%, rgba(0, 0, 0, 0.6) 52.28%, rgba(0, 0, 0, 0.4) 95.58%), url('/images/hero.jpg')"
+        bgPosition={{ md: "center", base: "center" }}
+        px={{ md: 20, base: 6 }}
+        bgRepeat="no-repeat"
+        bgSize="cover"
       >
-        <Image
-          borderRadius={{ md: "none", base: "lg" }}
-          alt="a girl cleaning"
-          src="/images/cleaning.jpg"
-        ></Image>
-
-        <Stack
-          spacing={{ md: 8, base: 5 }}
-          py={{ md: 24, base: 18 }}
-          px={{ md: 20, base: 0 }}
-          direction="column"
-        >
+        <Flex direction="row" pt={{ md: 5, base: 5 }}>
           <Heading
-            fontSize={{ md: "4xl", base: "3xl" }}
-            fontWeight={{ md: 600, base: 500 }}
+            alignSelf="center"
+            pl={1}
+            color="rgb(255 255 255 / 95%)"
+            fontSize="xl"
           >
-            Everyday life made easier
+            t<chakra.span color="tasker_green.200">ask</chakra.span>er.ng
           </Heading>
-          <Text fontSize={{ md: "1.4rem", base: "xl" }} fontWeight={400}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit
-            arcu, bibendum et libero integer ut. Non nisl turpis gravid
-          </Text>
-          <List
-            pt={{ base: 2, md: 0 }}
-            fontSize={{ md: "1.35rem", base: "xl" }}
-            fontWeight={400}
-            spacing={{ md: 2, base: 6 }}
-          >
-            <ListItem>
-              <ListIcon as={HiCheck} />
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit
-            </ListItem>
-            <ListItem>
-              <ListIcon as={HiCheck} />
-              Assumenda, quia temporibus eveniet a libero incidunt suscipit
-            </ListItem>
-          </List>
-        </Stack>
-      </Stack>
+          <Spacer />
+          <Stack align="center" direction="row" spacing={10}>
+            <Link color="#fff">Benefits</Link>
 
-      <Box px={{ md: 12, base: 6 }} py={{ lg: 4, md: 14, base: "none" }}>
+            <Button
+              display={{ md: "block", base: "none" }}
+              variant="solid"
+              colorScheme="tasker_red"
+            >
+              Get Started
+            </Button>
+          </Stack>
+        </Flex>
+
         <Stack
-          spacing={{ lg: "none", md: 10, base: 8 }}
-          align="start"
-          justify="space-between"
-          px={{ md: 16, base: 6 }}
-          py={{ md: 16, base: 10 }}
-          borderRadius="xl"
-          backgroundColor="tasker_sorbet.900"
-          direction={{ lg: "row", md: "column", base: "column" }}
+          direction={{ md: "row", base: "column" }}
+          justify={{ md: "space-between", base: "center" }}
+          py={{ md: 14, base: 7 }}
         >
           <Stack
-            spacing={{ lg: "none", md: 8, base: 5 }}
-            direction="column"
-            width={{ lg: "40%", md: "100%", sm: "100%" }}
+            alignSelf="center"
+            spacing={{ md: 6, base: 6 }}
+            width={{ md: "50%", base: "100%" }}
+            py={{ md: 20, base: 10 }}
+            textAlign={{ base: "center", md: "left" }}
           >
             <Heading
-              fontWeight={{ md: 600, base: 500 }}
-              fontSize={{ md: "4xl", base: "3xl" }}
+              color="white"
+              fontWeight={800}
+              fontSize={{ lg: "6xl", base: "4xl" }}
             >
-              Start making the most of your time.
+              Everyday life is made easier.
             </Heading>
-            <Text fontSize={{ md: "1.35rem", base: "1.18rem" }}>
-              Simply insert your name, address and phone number and we will
-              provide you with a list of verified taskers to choose from.
+            <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="xl">
+              Connect with highly verified taskers around your location for all
+              your household needs with one click.
             </Text>
           </Stack>
-          <Stack fontSize="xl" spacing={4}>
-            <Stack direction={{ md: "row", base: "column" }} spacing={6}>
-              <FormControl>
-                <FormLabel fontSize="lg" htmlFor="Full name">
-                  Full name
-                </FormLabel>
-                <Input
-                  backgroundColor="white"
-                  height={12}
-                  id="Full name"
-                  type="text"
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel fontSize="lg" htmlFor="Phone number">
-                  Phone number
-                </FormLabel>
-                <Input
-                  backgroundColor="white"
-                  height={12}
-                  id="Phone number"
-                  type="number"
-                />
-              </FormControl>
+
+          <Stack
+            spacing={4}
+            justify="center"
+            alignSelf="center"
+            maxW={{ md: "md", base: "md" }}
+            py={6}
+            px={{ md: 10, base: 6 }}
+            borderRadius="md"
+            backgroundColor="white"
+          >
+            <Heading fontSize="3xl" fontWeight={600} pb={2}>
+              Ask Now!
+            </Heading>
+
+            <Stack spacing={4}>
+              <Stack spacing={2} direction="row">
+                <FormControl>
+                  <FormLabel fontSize="sm">Name</FormLabel>
+                  <Input px={2} type="text" placeholder="John Obi" />
+                </FormControl>
+
+                <FormControl>
+                  <FormLabel fontSize="sm">Phone</FormLabel>
+                  <Input px={2} type="tel" placeholder="0123456789" />
+                </FormControl>
+              </Stack>
+
+              <Stack spacing={2} direction="row">
+                <FormControl>
+                  <FormLabel fontSize="sm">Address</FormLabel>
+                  <Input type="text" px={2} placeholder="Lekki, Lagos" />
+                </FormControl>
+              </Stack>
             </Stack>
 
-            <FormControl>
-              <FormLabel fontSize="lg" htmlFor="Address">
-                Address
-              </FormLabel>
-              <Input
-                backgroundColor="white"
-                height={12}
-                id="Address"
-                type="text"
-              />
-            </FormControl>
-
-            <Text fontSize="lg" pt={3}>
-              What services do you need?
-            </Text>
-            <Stack
-              alignItems={{ md: "none", base: "space-between" }}
-              spacing={3}
-            >
+            <Text pt={2}>What services do you need?</Text>
+            <Stack spacing={2}>
               <Stack direction="row">
-                <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="lg">Cleaning</Text>
+                <Checkbox value="Cleaning" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Cleaning</Text>
                 </Checkbox>
-                <Checkbox value="Cooking" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="lg">Cleaning</Text>
+                <Checkbox value="Cooking" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Cooking</Text>
+                </Checkbox>
+                <Checkbox value="Plumbing" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Plumbing</Text>
                 </Checkbox>
               </Stack>
 
               <Stack direction="row">
-                <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="lg">Cleaning</Text>
+                <Checkbox value="Carpentry" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Carpentry</Text>
                 </Checkbox>
-                <Checkbox value="Cleaning" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="lg">Cleaning</Text>
+                <Checkbox value="Electrician" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Electrician</Text>
+                </Checkbox>
+                <Checkbox value="Mechanic" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Mechanic</Text>
                 </Checkbox>
               </Stack>
 
               <Stack direction="row">
-                <Checkbox
-                  width={8}
-                  borderColor="lightgrey"
-                  value="Cooking"
-                  flex={1}
-                >
-                  <Text fontSize="lg">Cleaning</Text>
+                <Checkbox value="Shopping" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Shopping</Text>
                 </Checkbox>
-                <Checkbox value="Shopping" borderColor="lightgrey" flex={1}>
-                  <Text fontSize="lg">Cleaning</Text>
+                <Checkbox value="Laundry" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Laundry</Text>
+                </Checkbox>
+                <Checkbox value="Other" flex={1}>
+                  <Text fontSize={{ md: "md", base: "sm" }}>Other</Text>
                 </Checkbox>
               </Stack>
             </Stack>
 
-            <Text pt={4} pb={4} fontSize={{ md: "lg", base: "md" }}>
-              By clicking sign up, you agree to the{" "}
-              <chakra.span fontWeight={600}>Terms and Conditions</chakra.span>{" "}
-              and <chakra.span fontWeight={600}>privacy policy</chakra.span>.
+            <Text pb={2} pt={1} fontSize="sm" color="rgb(0 0 0 / 55%)">
+              By continuing, you agree to the{" "}
+              <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
+                Terms and Conditions
+              </chakra.span>{" "}
+              and{" "}
+              <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
+                privacy policy
+              </chakra.span>
+              .
             </Text>
 
             <Button
               py={6}
               fontWeight={700}
-              fontSize="xl"
+              fontSize="lg"
               colorScheme="tasker_red"
             >
-              Sign up
+              Contact Us
             </Button>
           </Stack>
         </Stack>
-      </Box>
-      <Flex align="center" direction="row" pr={8}>
-        <Spacer />
-        <Text fontSize="md" pr={6}>
-          All rights reserved.
-        </Text>
-        <Stack spacing={2} direction="row">
+      </Stack>
+
+      <Stack
+        p={{ md: 16, base: 8 }}
+        spacing={{ md: "none", base: 8 }}
+        justify={{ md: "space-around", base: "none" }}
+        direction={{ lg: "row", base: "column-reverse" }}
+      >
+        <Stack
+          justify="center"
+          width={{ md: "xl", base: "100%" }}
+          spacing={{ md: 6, base: 5 }}
+          alignSelf="center"
+        >
+          <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
+            Start to make the most of your time.
+          </Heading>
+          <Text fontSize={{ md: "1.3rem", base: "lg" }}>
+            When life gets busy, you don’t have to tackle it alone. Get back
+            time for what you love without breaking the bank.
+          </Text>
+          <List spacing={3}>
+            <ListItem fontSize={{ md: "xl", base: "lg" }}>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Choose your Tasker by location, reviews, skills, and price.
+            </ListItem>
+            <ListItem fontSize={{ md: "xl", base: "lg" }}>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Chat with your tasker and schedule when it works for you.
+            </ListItem>
+            <ListItem fontSize={{ md: "xl", base: "lg" }}>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Pay, tip, and review all through one platform.{" "}
+            </ListItem>
+          </List>
+        </Stack>
+        <Image
+          display={{ md: "block", base: "none" }}
+          borderRadius={{ md: "md", base: "md" }}
+          alt="a girl cleaning"
+          src="/images/fixing.jpg"
+        ></Image>
+      </Stack>
+
+      <Stack
+        align="center"
+        justify={{ md: "space-around", base: "none" }}
+        px={{ md: 16, base: 8 }}
+        direction={{ lg: "row", md: "column", base: "column" }}
+      >
+        <Image
+          width={{ md: "40%", base: "none" }}
+          height={{ md: "sm", base: "none" }}
+          borderRadius={{ md: "md", base: "lg" }}
+          alt="a girl cleaning"
+          src="/images/washing.jpg"
+        ></Image>
+
+        <Stack
+          alignSelf="center"
+          spacing={{ md: 6, base: 5 }}
+          py={{ md: 24, base: 18 }}
+          px={{ md: 20, base: 0 }}
+          width={{ md: "3xl", base: "none" }}
+          direction="column"
+        >
+          <Heading fontSize="2.75rem">
+            Build A Trusted Team For all household tasks.
+          </Heading>
+          <Text fontSize={{ md: "1.3rem", base: "lg" }}>
+            Build a team of local, background-checked Taskers to help with
+            whatever you need, they’ve got it covered.
+          </Text>
+          <List spacing={3}>
+            <ListItem fontSize={{ md: "xl", base: "lg" }}>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Choose your Tasker by location, reviews, skills, and price.
+            </ListItem>
+            <ListItem fontSize={{ md: "xl", base: "lg" }}>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Chat with your tasker and schedule when it works for you.
+            </ListItem>
+            <ListItem fontSize={{ md: "xl", base: "lg" }}>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Pay, tip, and review all through one platform.{" "}
+            </ListItem>
+          </List>
+        </Stack>
+      </Stack>
+
+      <Stack alignSelf="center">
+        <Stack align="center" spacing={2} direction="row">
           <IconButton variant="ghost" icon={<BsTwitter />}></IconButton>
           <IconButton variant="ghost" icon={<BsInstagram />}></IconButton>
           <IconButton variant="ghost" icon={<BsFacebook />}></IconButton>
         </Stack>
-      </Flex>
+        <Text color="rgb(0 0 0 / 55%)" textAlign="center" fontSize="sm" pb={2}>
+          All rights reserved.
+        </Text>
+      </Stack>
     </Stack>
   );
 }

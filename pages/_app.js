@@ -27,7 +27,7 @@ const colors = {
     900: "#0C2713",
   },
   tasker_sorbet: {
-    900: "#F1F9F3",
+    100: "#F1F9F3",
   },
 };
 
