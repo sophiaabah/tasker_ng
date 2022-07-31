@@ -65,9 +65,10 @@ export default function App() {
             alignSelf="center"
             pl={1}
             color="rgb(255 255 255 / 95%)"
-            fontSize="xl"
+            fontSize="2xl"
           >
-            t<chakra.span color="tasker_green.200">ask</chakra.span>er.ng
+            T<chakra.span color="tasker_green.200">ask</chakra.span>er
+            <chakra.span color="tasker_green.200">Now</chakra.span>
           </Heading>
           <Spacer />
           <Stack align="center" direction="row" spacing={10}>
@@ -100,7 +101,7 @@ export default function App() {
               fontWeight={800}
               fontSize={{ lg: "6xl", base: "4xl" }}
             >
-              Everyday life is made easier.
+              Everyday life made easier.
             </Heading>
             <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="xl">
               Connect with highly verified taskers around your location for all
@@ -219,7 +220,7 @@ export default function App() {
           alignSelf="center"
         >
           <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
-            Start to make the most of your time.
+            Start making the most of your time.
           </Heading>
           <Text fontSize={{ md: "1.3rem", base: "lg" }}>
             When life gets busy, you don’t have to tackle it alone. Get back
@@ -280,15 +281,15 @@ export default function App() {
           <List spacing={3}>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
-              Choose your Tasker by location, reviews, skills, and price.
+              Get a wide range of taskers to make a better selection.
             </ListItem>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
-              Chat with your tasker and schedule when it works for you.
+              Compare them by reviews, ratings, and prices.
             </ListItem>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
-              Pay, tip, and review all through one platform.{" "}
+              Choose and connect with the best person for the job.
             </ListItem>
           </List>
         </Stack>
