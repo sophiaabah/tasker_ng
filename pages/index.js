@@ -46,6 +46,217 @@ const arrOfTasks = [
   "Laundry",
 ];
 
+const Form = () => {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  function onSubmit(e) {
+    e.preventDefault();
+    console.log("data:", { name, phoneNumber, address, email, tasks });
+  }
+
+  return (
+    <Stack
+      as="form"
+      onSubmit={onSubmit}
+      spacing={4}
+      justify="center"
+      alignSelf="center"
+      maxW={{ md: "md", base: "md" }}
+      py={6}
+      px={{ md: 10, base: 6 }}
+      borderRadius="md"
+      backgroundColor="white"
+    >
+      <Heading fontSize="3xl" fontWeight={600} pb={2}>
+        Ask Now!
+      </Heading>
+
+      <Stack spacing={4}>
+        <Stack spacing={2} direction="row">
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Name</FormLabel>
+            <Input
+              onChange={(e) => setName(e.target.value)}
+              px={2}
+              type="text"
+              placeholder="John Obi"
+            />
+          </FormControl>
+
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Whatsapp number</FormLabel>
+            <Input
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              px={2}
+              type="tel"
+              placeholder="0123456789"
+            />
+          </FormControl>
+        </Stack>
+
+        <Stack spacing={2} direction="row">
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Email address</FormLabel>
+            <Input
+              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              px={2}
+              placeholder="john@gmail.com"
+            />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel fontSize="sm">Home address</FormLabel>
+            <Input
+              onChange={(e) => setAddress(e.target.value)}
+              type="text"
+              px={2}
+              placeholder="Lekki, Lagos"
+            />
+          </FormControl>
+        </Stack>
+      </Stack>
+
+      <Text pt={2}>What services do you need?</Text>
+      <Stack spacing={2}>
+        <Stack direction="row">
+          <Checkbox
+            isChecked={tasks.includes("cleaning")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("cleaning"))
+                : setTasks(tasks.filter((task) => task !== "cleaning"));
+            }}
+            value="Cleaning"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Cleaning</Text>
+          </Checkbox>
+          <Checkbox
+            isChecked={tasks.includes("cooking")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("cooking"))
+                : setTasks(tasks.filter((task) => task !== "cooking"));
+            }}
+            value="Cooking"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Cooking</Text>
+          </Checkbox>
+          <Checkbox
+            isChecked={tasks.includes("plumbing")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("plumbing"))
+                : setTasks(tasks.filter((task) => task !== "plumbing"));
+            }}
+            value="Plumbing"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Plumbing</Text>
+          </Checkbox>
+        </Stack>
+
+        <Stack direction="row">
+          <Checkbox
+            isChecked={tasks.includes("carpentry")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("carpentry"))
+                : setTasks(tasks.filter((task) => task !== "carpentry"));
+            }}
+            value="Carpentry"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Carpentry</Text>
+          </Checkbox>
+          <Checkbox
+            isChecked={tasks.includes("electrician")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("electrician"))
+                : setTasks(tasks.filter((task) => task !== "electrician"));
+            }}
+            value="Electrician"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Electrician</Text>
+          </Checkbox>
+          <Checkbox
+            isChecked={tasks.includes("mechanic")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("mechanic"))
+                : setTasks(tasks.filter((task) => task !== "mechanic"));
+            }}
+            value="Mechanic"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Mechanic</Text>
+          </Checkbox>
+        </Stack>
+
+        <Stack direction="row">
+          <Checkbox
+            isChecked={tasks.includes("shopping")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("shopping"))
+                : setTasks(tasks.filter((task) => task !== "shopping"));
+            }}
+            value="Shopping"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Shopping</Text>
+          </Checkbox>
+          <Checkbox
+            isChecked={tasks.includes("laundry")}
+            onChange={(e) => {
+              e.target.checked
+                ? setTasks(tasks.concat("laundry"))
+                : setTasks(tasks.filter((task) => task !== "laundry"));
+            }}
+            value="Laundry"
+            flex={1}
+          >
+            <Text fontSize={{ md: "md", base: "sm" }}>Laundry</Text>
+          </Checkbox>
+          <Checkbox value="Other" flex={1}>
+            <Text fontSize={{ md: "md", base: "sm" }}>Other</Text>
+          </Checkbox>
+        </Stack>
+      </Stack>
+
+      <Text pb={2} pt={1} fontSize="sm" color="rgb(0 0 0 / 55%)">
+        By continuing, you agree to the{" "}
+        <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
+          Terms and Conditions
+        </chakra.span>{" "}
+        and{" "}
+        <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
+          privacy policy
+        </chakra.span>
+        .
+      </Text>
+
+      <Button
+        isDisabled={!tasks.length}
+        type="submit"
+        py={6}
+        fontWeight={700}
+        fontSize="lg"
+        colorScheme="tasker_red"
+      >
+        Contact Us
+      </Button>
+    </Stack>
+  );
+};
+
 export default function App() {
   return (
     <Stack spacing={5}>
@@ -71,17 +282,6 @@ export default function App() {
             <chakra.span color="tasker_green.200">Now</chakra.span>
           </Heading>
           <Spacer />
-          <Stack align="center" direction="row" spacing={10}>
-            <Link color="#fff">Benefits</Link>
-
-            <Button
-              display={{ md: "block", base: "none" }}
-              variant="solid"
-              colorScheme="tasker_red"
-            >
-              Get Started
-            </Button>
-          </Stack>
         </Flex>
 
         <Stack
@@ -109,101 +309,7 @@ export default function App() {
             </Text>
           </Stack>
 
-          <Stack
-            spacing={4}
-            justify="center"
-            alignSelf="center"
-            maxW={{ md: "md", base: "md" }}
-            py={6}
-            px={{ md: 10, base: 6 }}
-            borderRadius="md"
-            backgroundColor="white"
-          >
-            <Heading fontSize="3xl" fontWeight={600} pb={2}>
-              Ask Now!
-            </Heading>
-
-            <Stack spacing={4}>
-              <Stack spacing={2} direction="row">
-                <FormControl>
-                  <FormLabel fontSize="sm">Name</FormLabel>
-                  <Input px={2} type="text" placeholder="John Obi" />
-                </FormControl>
-
-                <FormControl>
-                  <FormLabel fontSize="sm">Phone</FormLabel>
-                  <Input px={2} type="tel" placeholder="0123456789" />
-                </FormControl>
-              </Stack>
-
-              <Stack spacing={2} direction="row">
-                <FormControl>
-                  <FormLabel fontSize="sm">Address</FormLabel>
-                  <Input type="text" px={2} placeholder="Lekki, Lagos" />
-                </FormControl>
-              </Stack>
-            </Stack>
-
-            <Text pt={2}>What services do you need?</Text>
-            <Stack spacing={2}>
-              <Stack direction="row">
-                <Checkbox value="Cleaning" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Cleaning</Text>
-                </Checkbox>
-                <Checkbox value="Cooking" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Cooking</Text>
-                </Checkbox>
-                <Checkbox value="Plumbing" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Plumbing</Text>
-                </Checkbox>
-              </Stack>
-
-              <Stack direction="row">
-                <Checkbox value="Carpentry" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Carpentry</Text>
-                </Checkbox>
-                <Checkbox value="Electrician" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Electrician</Text>
-                </Checkbox>
-                <Checkbox value="Mechanic" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Mechanic</Text>
-                </Checkbox>
-              </Stack>
-
-              <Stack direction="row">
-                <Checkbox value="Shopping" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Shopping</Text>
-                </Checkbox>
-                <Checkbox value="Laundry" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Laundry</Text>
-                </Checkbox>
-                <Checkbox value="Other" flex={1}>
-                  <Text fontSize={{ md: "md", base: "sm" }}>Other</Text>
-                </Checkbox>
-              </Stack>
-            </Stack>
-
-            <Text pb={2} pt={1} fontSize="sm" color="rgb(0 0 0 / 55%)">
-              By continuing, you agree to the{" "}
-              <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
-                Terms and Conditions
-              </chakra.span>{" "}
-              and{" "}
-              <chakra.span color="rgb(0 0 0 / 65%)" fontWeight={600}>
-                privacy policy
-              </chakra.span>
-              .
-            </Text>
-
-            <Button
-              py={6}
-              fontWeight={700}
-              fontSize="lg"
-              colorScheme="tasker_red"
-            >
-              Contact Us
-            </Button>
-          </Stack>
+          <Form />
         </Stack>
       </Stack>
 
