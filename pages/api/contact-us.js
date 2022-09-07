@@ -25,7 +25,7 @@ export default async function handler(req, res) {
           });
         }
 
-        await db.insert("users", { ...data, tasks: JSON.stringify(data.tasks) });
+        await db.insert("lead", { ...data, tasks: JSON.stringify(data.tasks) });
 
         return res.status(200).json({ success: true });
       }
