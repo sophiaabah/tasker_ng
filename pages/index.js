@@ -125,7 +125,7 @@ const Form = () => {
               </FormControl>
 
               <FormControl isRequired>
-                <FormLabel fontSize="sm">Whatsapp number</FormLabel>
+                <FormLabel fontSize="sm">Whatsapp</FormLabel>
                 <Input
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   px={2}
@@ -386,7 +386,7 @@ export default function App() {
           <List spacing={3}>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
-              Choose your Tasker by location, reviews, skills, and price.
+              Choose your tasker by location, reviews, skills, and price.
             </ListItem>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
@@ -434,7 +434,7 @@ export default function App() {
             Build A Trusted Team For all household tasks.
           </Heading>
           <Text fontSize={{ md: "1.3rem", base: "lg" }}>
-            Build a team of local, background-checked Taskers to help with
+            Build a team of local, background-checked taskers to help with
             whatever you need, they’ve got it covered.
           </Text>
           <List spacing={3}>
