@@ -125,7 +125,7 @@ const Form = () => {
               </FormControl>
 
               <FormControl isRequired>
-                <FormLabel fontSize="sm">Whatsapp</FormLabel>
+                <FormLabel fontSize="sm">WhatsApp</FormLabel>
                 <Input
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   px={2}
