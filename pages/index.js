@@ -315,7 +315,7 @@ export default function App() {
       </Head>
 
       <Stack
-        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.7) 10.36%, rgba(0, 0, 0, 0.6) 52.28%, rgba(0, 0, 0, 0.4) 95.58%), url('/images/hero.jpg')"
+        bgImage=" linear-gradient(1.35deg, rgba(0, 0, 0, 0.7) 10.36%, rgba(0, 0, 0, 0.6) 52.28%, rgba(0, 0, 0, 0.25) 95.58%), url('/images/hero2.jpg')"
         bgPosition={{ md: "center", base: "center" }}
         px={{ md: 20, base: 6 }}
         bgRepeat="no-repeat"
