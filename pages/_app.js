@@ -33,7 +33,7 @@ const colors = {
 
 const fonts = {
   heading: "Poppins, sans-serif",
-  body: "Source Sans Pro, sans-serif",
+  body: "Rubik, sans-serif",
 };
 
 const theme = extendTheme({ colors, fonts });

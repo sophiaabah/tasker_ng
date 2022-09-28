@@ -379,11 +379,14 @@ export default function App() {
           <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
             Start making the most of your time.
           </Heading>
-          <Text fontSize={{ md: "1.3rem", base: "lg" }}>
+          <Text
+            fontSize={{ md: "1.3rem", base: "lg" }}
+            color="rgb(0 0 0 / 65%)"
+          >
             When life gets busy, you don’t have to tackle it alone. Get back
             time for what you love without breaking the bank.
           </Text>
-          <List spacing={3}>
+          <List color="rgb(0 0 0 / 65%)" spacing={3}>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
               Choose your tasker by location, reviews, skills, and price.
@@ -433,11 +436,14 @@ export default function App() {
           <Heading fontSize="2.75rem">
             Build A Trusted Team For all household tasks.
           </Heading>
-          <Text fontSize={{ md: "1.3rem", base: "lg" }}>
+          <Text
+            color="rgb(0 0 0 / 65%)"
+            fontSize={{ md: "1.3rem", base: "lg" }}
+          >
             Build a team of local, background-checked taskers to help with
             whatever you need, they’ve got it covered.
           </Text>
-          <List spacing={3}>
+          <List color="rgb(0 0 0 / 65%)" spacing={3}>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
               <ListIcon as={MdCheckCircle} color="green.500" />
               Get a wide range of taskers to make a better selection.
