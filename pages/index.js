@@ -64,6 +64,11 @@ const Form = () => {
     e.preventDefault();
     console.log("data:", { name, phoneNumber, address, email, tasks });
     handlerTest();
+
+    ReactGA.event({
+      category: "lead",
+      action: "generate_lead",
+    });
   }
 
   async function handlerTest() {

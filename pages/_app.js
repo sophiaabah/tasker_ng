@@ -1,5 +1,8 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 
 const colors = {
   tasker_red: {
@@ -39,6 +42,23 @@ const fonts = {
 const theme = extendTheme({ colors, fonts });
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    ReactGA.initialize("G-2M22Y7031D");
+    ReactGA.send({ hitType: "pageview", page: router.asPath });
+
+    const handleRouteChange = (url) => {
+      ReactGA.send({ hitType: "pageview", page: url });
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
+
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />;
