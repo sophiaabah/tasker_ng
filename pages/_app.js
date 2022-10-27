@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    ReactGA.initialize("G-2M22Y7031D");
+    ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
     ReactGA.send({ hitType: "pageview", page: router.asPath });
 
     const handleRouteChange = (url) => {
