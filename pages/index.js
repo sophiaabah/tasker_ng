@@ -115,7 +115,7 @@ const Form = () => {
       {!submitted ? (
         <React.Fragment>
           <Heading fontSize="3xl" fontWeight={600} pb={2}>
-            Ask Now!
+            Register
           </Heading>
           <Stack spacing={4}>
             <Stack spacing={2} direction="row">
