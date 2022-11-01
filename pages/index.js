@@ -316,7 +316,8 @@ export default function App() {
   return (
     <Stack spacing={5}>
       <Head>
-        <title>Welcome to Tasker</title>
+        <meta name="description" content="Everyday life made easier" />
+        <title>Tasker | Everyday life made easier </title>
       </Head>
 
       <Stack
