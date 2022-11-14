@@ -30,6 +30,7 @@ import {
 } from "@chakra-ui/react";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
 import { useRouter } from "next/router";
 import { HiCheck } from "react-icons/hi";
 import { MdCheckCircle } from "react-icons/md";
