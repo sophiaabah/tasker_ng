@@ -73,6 +73,7 @@ export default function RegisterPage() {
       router.push(`/register/step-2?providerId=${providerId}`);
     } catch (e) {
       setHasError(true);
+      console.error(e);
     } finally {
       setIsLoading(false);
     }
@@ -94,19 +95,19 @@ export default function RegisterPage() {
           <Heading fontSize="30px">Let&apos;s get started</Heading>
 
           <Stack alignItems="center" spacing={6} direction="row" divider={<Divider w="32px" h="1px" bgColor="gray.400" />}>
-            <Center w={16} py={2} bgColor="red.100" rounded="md" color="red.800">
+            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800">
               <Text fontWeight={600} fontSize="lg">
                 1
               </Text>
             </Center>
 
-            <Center w={16} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
               <Text fontWeight={600} fontSize="lg">
                 2
               </Text>
             </Center>
 
-            <Center w={16} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
               <Text fontWeight={600} fontSize="lg">
                 3
               </Text>
@@ -223,7 +224,7 @@ export default function RegisterPage() {
                 type="submit"
                 fontWeight={400}
                 isLoading={isLoading}
-                colorScheme="tasker_red"
+                colorScheme="primary"
                 rightIcon={<IoIosArrowForward />}
               >
                 Continue

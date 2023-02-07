@@ -37,17 +37,7 @@ import { HiThumbUp, HiThumbDown } from "react-icons/hi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
 import Logo from "../components/logo";
 
-const arrOfTasks = [
-  "Cooking",
-  "Cleaning",
-  "Plumbing",
-  "Carpentry",
-  "Electrician",
-  "Mechanic",
-  "Dish washing",
-  "Shopping",
-  "Laundry",
-];
+const arrOfTasks = ["Cooking", "Cleaning", "Plumbing", "Carpentry", "Electrician", "Mechanic", "Dish washing", "Shopping", "Laundry"];
 
 const formResponse = { error: "", success: "" };
 
@@ -122,43 +112,23 @@ const Form = () => {
             <Stack spacing={2} direction="row">
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Name</FormLabel>
-                <Input
-                  onChange={(e) => setName(e.target.value)}
-                  px={2}
-                  type="text"
-                  placeholder="John Obi"
-                />
+                <Input onChange={(e) => setName(e.target.value)} px={2} type="text" placeholder="John Obi" />
               </FormControl>
 
               <FormControl isRequired>
                 <FormLabel fontSize="sm">WhatsApp</FormLabel>
-                <Input
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  px={2}
-                  type="tel"
-                  placeholder="0123456789"
-                />
+                <Input onChange={(e) => setPhoneNumber(e.target.value)} px={2} type="tel" placeholder="0123456789" />
               </FormControl>
             </Stack>
 
             <Stack spacing={2} direction="row">
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Email address</FormLabel>
-                <Input
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="text"
-                  px={2}
-                  placeholder="john@gmail.com"
-                />
+                <Input onChange={(e) => setEmail(e.target.value)} type="text" px={2} placeholder="john@gmail.com" />
               </FormControl>
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Home address</FormLabel>
-                <Input
-                  onChange={(e) => setAddress(e.target.value)}
-                  type="text"
-                  px={2}
-                  placeholder="Lekki, Lagos"
-                />
+                <Input onChange={(e) => setAddress(e.target.value)} type="text" px={2} placeholder="Lekki, Lagos" />
               </FormControl>
             </Stack>
           </Stack>
@@ -168,9 +138,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("cleaning")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("cleaning"))
-                    : setTasks(tasks.filter((task) => task !== "cleaning"));
+                  e.target.checked ? setTasks(tasks.concat("cleaning")) : setTasks(tasks.filter((task) => task !== "cleaning"));
                 }}
                 value="Cleaning"
                 flex={1}
@@ -180,9 +148,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("cooking")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("cooking"))
-                    : setTasks(tasks.filter((task) => task !== "cooking"));
+                  e.target.checked ? setTasks(tasks.concat("cooking")) : setTasks(tasks.filter((task) => task !== "cooking"));
                 }}
                 value="Cooking"
                 flex={1}
@@ -192,9 +158,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("plumbing")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("plumbing"))
-                    : setTasks(tasks.filter((task) => task !== "plumbing"));
+                  e.target.checked ? setTasks(tasks.concat("plumbing")) : setTasks(tasks.filter((task) => task !== "plumbing"));
                 }}
                 value="Plumbing"
                 flex={1}
@@ -207,9 +171,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("carpentry")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("carpentry"))
-                    : setTasks(tasks.filter((task) => task !== "carpentry"));
+                  e.target.checked ? setTasks(tasks.concat("carpentry")) : setTasks(tasks.filter((task) => task !== "carpentry"));
                 }}
                 value="Carpentry"
                 flex={1}
@@ -219,9 +181,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("electrician")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("electrician"))
-                    : setTasks(tasks.filter((task) => task !== "electrician"));
+                  e.target.checked ? setTasks(tasks.concat("electrician")) : setTasks(tasks.filter((task) => task !== "electrician"));
                 }}
                 value="Electrician"
                 flex={1}
@@ -231,9 +191,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("mechanic")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("mechanic"))
-                    : setTasks(tasks.filter((task) => task !== "mechanic"));
+                  e.target.checked ? setTasks(tasks.concat("mechanic")) : setTasks(tasks.filter((task) => task !== "mechanic"));
                 }}
                 value="Mechanic"
                 flex={1}
@@ -246,9 +204,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("shopping")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("shopping"))
-                    : setTasks(tasks.filter((task) => task !== "shopping"));
+                  e.target.checked ? setTasks(tasks.concat("shopping")) : setTasks(tasks.filter((task) => task !== "shopping"));
                 }}
                 value="Shopping"
                 flex={1}
@@ -258,9 +214,7 @@ const Form = () => {
               <Checkbox
                 isChecked={tasks.includes("laundry")}
                 onChange={(e) => {
-                  e.target.checked
-                    ? setTasks(tasks.concat("laundry"))
-                    : setTasks(tasks.filter((task) => task !== "laundry"));
+                  e.target.checked ? setTasks(tasks.concat("laundry")) : setTasks(tasks.filter((task) => task !== "laundry"));
                 }}
                 value="Laundry"
                 flex={1}
@@ -290,7 +244,7 @@ const Form = () => {
             py={6}
             fontWeight={700}
             fontSize="lg"
-            colorScheme="tasker_red"
+            colorScheme="primary"
           >
             Contact Us
           </Button>
@@ -329,14 +283,9 @@ export default function App() {
         bgSize="cover"
       >
         <Flex direction="row" pt={{ md: 5, base: 5 }}>
-          <Heading
-            alignSelf="center"
-            pl={1}
-            color="rgb(255 255 255 / 95%)"
-            fontSize="2xl"
-          >
-            T<chakra.span color="tasker_green.200">ask</chakra.span>er
-            <chakra.span color="tasker_green.200">Now</chakra.span>
+          <Heading alignSelf="center" pl={1} color="rgb(255 255 255 / 95%)" fontSize="2xl">
+            T<chakra.span color="accent.200">ask</chakra.span>er
+            <chakra.span color="accent.200">Now</chakra.span>
           </Heading>
           <Spacer />
         </Flex>
@@ -353,16 +302,11 @@ export default function App() {
             py={{ md: 20, base: 10 }}
             textAlign={{ base: "center", md: "left" }}
           >
-            <Heading
-              color="white"
-              fontWeight={800}
-              fontSize={{ lg: "6xl", base: "4xl" }}
-            >
+            <Heading color="white" fontWeight={800} fontSize={{ lg: "6xl", base: "4xl" }}>
               Everyday life made easier.
             </Heading>
             <Text color="rgb(255 255 255 / 95%)" fontWeight={400} fontSize="xl">
-              Connect with highly verified taskers around your location for all
-              your household needs with one click.
+              Connect with highly verified taskers around your location for all your household needs with one click.
             </Text>
           </Stack>
 
@@ -383,15 +327,9 @@ export default function App() {
           spacing={{ md: 6, base: 5 }}
           alignSelf={{ lg: "center", md: "start", base: "start" }}
         >
-          <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
-            Start making the most of your time.
-          </Heading>
-          <Text
-            fontSize={{ md: "1.3rem", base: "lg" }}
-            color="rgb(0 0 0 / 65%)"
-          >
-            When life gets busy, you don’t have to tackle it alone. Get back
-            time for what you love without breaking the bank.
+          <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>Start making the most of your time.</Heading>
+          <Text fontSize={{ md: "1.3rem", base: "lg" }} color="rgb(0 0 0 / 65%)">
+            When life gets busy, you don’t have to tackle it alone. Get back time for what you love without breaking the bank.
           </Text>
           <List color="rgb(0 0 0 / 65%)" spacing={3}>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
@@ -440,15 +378,9 @@ export default function App() {
           width={{ lg: "3xl", md: "2xl", base: "none" }}
           direction="column"
         >
-          <Heading fontSize="2.75rem">
-            Build A Trusted Team For all household tasks.
-          </Heading>
-          <Text
-            color="rgb(0 0 0 / 65%)"
-            fontSize={{ md: "1.3rem", base: "lg" }}
-          >
-            Build a team of local, background-checked taskers to help with
-            whatever you need, they’ve got it covered.
+          <Heading fontSize="2.75rem">Build A Trusted Team For all household tasks.</Heading>
+          <Text color="rgb(0 0 0 / 65%)" fontSize={{ md: "1.3rem", base: "lg" }}>
+            Build a team of local, background-checked taskers to help with whatever you need, they’ve got it covered.
           </Text>
           <List color="rgb(0 0 0 / 65%)" spacing={3}>
             <ListItem fontSize={{ md: "xl", base: "lg" }}>
