@@ -32,7 +32,6 @@ export default function RegisterPage() {
   const [hasError, setHasError] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
-    email: "",
     phone: "",
     national_id: "",
     location: "",
@@ -134,34 +133,12 @@ export default function RegisterPage() {
               </FormControl>
 
               <FormControl isRequired>
-                <FormLabel fontSize="sm">Email address</FormLabel>
-                <Input
-                  type="email"
-                  placeholder="john@gmail.com"
-                  value={formValues.email}
-                  onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
-                />
-              </FormControl>
-            </Stack>
-
-            <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 6 }}>
-              <FormControl isRequired>
                 <FormLabel fontSize="sm">Whatsapp</FormLabel>
                 <Input
                   type="tel"
                   placeholder="08012345678"
                   value={formValues.phone}
                   onChange={(e) => setFormValues({ ...formValues, phone: e.target.value })}
-                />
-              </FormControl>
-
-              <FormControl isRequired>
-                <FormLabel fontSize="sm">National Identity Number</FormLabel>
-                <Input
-                  type="number"
-                  placeholder="4245-0696-3564"
-                  value={formValues.national_id}
-                  onChange={(e) => setFormValues({ ...formValues, national_id: e.target.value })}
                 />
               </FormControl>
             </Stack>
@@ -178,6 +155,18 @@ export default function RegisterPage() {
                 />
               </FormControl>
 
+              <FormControl isRequired>
+                <FormLabel fontSize="sm">National Identity Number</FormLabel>
+                <Input
+                  type="number"
+                  placeholder="4245-0696-3564"
+                  value={formValues.national_id}
+                  onChange={(e) => setFormValues({ ...formValues, national_id: e.target.value })}
+                />
+              </FormControl>
+            </Stack>
+
+            <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 6 }}>
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Profile photo</FormLabel>
 
@@ -208,6 +197,8 @@ export default function RegisterPage() {
                   <Input ref={filePickerRef} display="none" type="file" accept="image/*" multiple={false} onChange={onFileChange} />
                 </Stack>
               </FormControl>
+
+              <chakra.div w="full" />
             </Stack>
 
             <Stack

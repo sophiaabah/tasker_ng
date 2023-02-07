@@ -17,7 +17,7 @@ const colors = {
     800: "#491D1D",
     900: "#240F0F",
   },
-  accent: {
+  secondary: {
     50: "#EBF9EF",
     100: "#C8EED2",
     200: "#A5E3B5",

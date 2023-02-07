@@ -284,8 +284,8 @@ export default function App() {
       >
         <Flex direction="row" pt={{ md: 5, base: 5 }}>
           <Heading alignSelf="center" pl={1} color="rgb(255 255 255 / 95%)" fontSize="2xl">
-            T<chakra.span color="accent.200">ask</chakra.span>er
-            <chakra.span color="accent.200">Now</chakra.span>
+            T<chakra.span color="secondary.200">ask</chakra.span>er
+            <chakra.span color="secondary.200">Now</chakra.span>
           </Heading>
           <Spacer />
         </Flex>

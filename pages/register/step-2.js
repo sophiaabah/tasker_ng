@@ -44,8 +44,8 @@ export default function RegisterPage() {
       setIsLoading(true);
       setHasError(false);
 
-      const updateProviderResponse = await Api.put(`/provider/${providerId}`, {
-        task: selectedTasks,
+      await Api.put(`/provider/${providerId}`, {
+        tasks: selectedTasks,
         availability_time: availability,
         price_range: priceRange.join("-"),
       });
