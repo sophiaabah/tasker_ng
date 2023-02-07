@@ -32,10 +32,10 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import ReactGA from "react-ga4";
 import { useRouter } from "next/router";
-import { HiCheck } from "react-icons/hi";
 import { MdCheckCircle } from "react-icons/md";
 import { HiThumbUp, HiThumbDown } from "react-icons/hi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
+import Logo from "../components/logo";
 
 const arrOfTasks = [
   "Cooking",
@@ -360,7 +360,7 @@ export default function App() {
             >
               Everyday life made easier.
             </Heading>
-            <Text color="rgb(255 255 255 / 95%)" fontWeight={500} fontSize="xl">
+            <Text color="rgb(255 255 255 / 95%)" fontWeight={400} fontSize="xl">
               Connect with highly verified taskers around your location for all
               your household needs with one click.
             </Text>
