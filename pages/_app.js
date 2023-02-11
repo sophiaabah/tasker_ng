@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import ReactGA from "react-ga4";
 
 const colors = {
-  tasker_red: {
+  primary: {
     50: "#F8EDED",
     100: "#EBCCCC",
     200: "#DDABAB",
@@ -17,7 +17,7 @@ const colors = {
     800: "#491D1D",
     900: "#240F0F",
   },
-  tasker_green: {
+  secondary: {
     50: "#EBF9EF",
     100: "#C8EED2",
     200: "#A5E3B5",
