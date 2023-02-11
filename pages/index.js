@@ -35,7 +35,7 @@ import { useRouter } from "next/router";
 import { MdCheckCircle } from "react-icons/md";
 import { HiThumbUp, HiThumbDown } from "react-icons/hi";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
-import Logo from "../components/logo";
+import Logo from "components/logo";
 
 const arrOfTasks = ["Cooking", "Cleaning", "Plumbing", "Carpentry", "Electrician", "Mechanic", "Dish washing", "Shopping", "Laundry"];
 

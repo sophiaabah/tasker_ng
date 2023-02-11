@@ -4,12 +4,7 @@ import Head from "next/head";
 import Logo from "components/logo";
 import { Center, Image, Text, Stack, Heading, Divider, Container, chakra, Icon } from "@chakra-ui/react";
 import { BsTelephone } from "react-icons/bs";
-import { FiMail } from "react-icons/fi";
-import { FaEdit } from "react-icons/fa";
 import { HiOutlineIdentification } from "react-icons/hi";
-import { useRouter } from "next/router";
-
-import { fetchProvider } from "../../lib/api";
 
 const getImageUrl = (url) => {
   return process.env.NEXT_PUBLIC_TASKER_BASE_URL + url;
