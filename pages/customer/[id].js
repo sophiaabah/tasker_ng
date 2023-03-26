@@ -185,8 +185,8 @@ export default function App({ searchResults, customerId }) {
                     variant={{ lg: "solid", base: "outline" }}
                     colorScheme="primary"
                     alignSelf="flex-end"
-                    isLoading={isLoading}
-                    disabled={isLoading}
+                    // isLoading={isLoading}
+                    // disabled={isLoading}
                     onClick={() => selectTasker(tasker.id)}
                   >
                     Select Tasker

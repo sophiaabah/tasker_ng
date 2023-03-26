@@ -84,7 +84,7 @@ export default function RegisterPage() {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Stack mt={8} spacing={16} alignItems="center">
+      <Stack mt={8} spacing={8} alignItems="center">
         <Stack mb={2} alignItems="center" spacing={6}>
           <Heading fontSize="30px">Let&apos;s get started</Heading>
 

@@ -89,7 +89,7 @@ export default function Page({ profile }) {
               flex={2}
               w="full"
               shadow="md"
-              maxH={{ lg: "350px", md: "350px", base: "300px" }}
+              maxH={{ lg: "350px", md: "350px", base: "220px" }}
               rounded="xl"
               overflow="hidden"
               alt={profile.name}
