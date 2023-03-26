@@ -27,8 +27,8 @@ export default function Page({ profile }) {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Stack spacing={16} alignItems="center">
-        <Stack mb={2} alignItems="center" spacing={6} px={6}>
+      <Stack spacing={8} alignItems="center">
+        <Stack my={4} alignItems="center" spacing={6} px={6}>
           <Heading textAlign="center" fontSize="30px">
             Your profile has been created!
           </Heading>
@@ -79,20 +79,24 @@ export default function Page({ profile }) {
           </Stack>
         </Stack>
 
-        <Container maxW="container.lg">
-          <Stack direction="row" spacing={16} justify="center">
+        <Container px={{ lg: 0, md: 10, base: 8 }} maxW="container.lg">
+          <Stack
+            direction={{ lg: "row", md: "row", base: "column" }}
+            spacing={{ lg: 16, md: 12, base: 8 }}
+            justify="center"
+          >
             <Image
               flex={2}
               w="full"
               shadow="md"
-              maxH="350px"
+              maxH={{ lg: "350px", md: "350px", base: "300px" }}
               rounded="xl"
               overflow="hidden"
               alt={profile.name}
               src={getImageUrl(profile.photo)}
               objectFit="cover"
               objectPosition="top"
-              display={{ md: "block", base: "none" }}
+              display={{ md: "block", base: "block" }}
             />
 
             <chakra.div flex={3}>

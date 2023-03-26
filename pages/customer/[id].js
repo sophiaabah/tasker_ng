@@ -34,7 +34,7 @@ const getImageUrl = (url) => {
 export default function App({ searchResults, customerId }) {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [isSelected, setIsSelected] = useState(true);
+  const [isSelected, setIsSelected] = useState(false);
 
   const selectTasker = async (providerId) => {
     try {
@@ -49,6 +49,7 @@ export default function App({ searchResults, customerId }) {
       console.error(e);
     } finally {
       setIsLoading(false);
+      setIsSelected(true);
     }
   };
   return (
@@ -185,6 +186,7 @@ export default function App({ searchResults, customerId }) {
                     colorScheme="primary"
                     alignSelf="flex-end"
                     isLoading={isLoading}
+                    disabled={isLoading}
                     onClick={() => selectTasker(tasker.id)}
                   >
                     Select Tasker

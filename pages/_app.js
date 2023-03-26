@@ -46,20 +46,20 @@ const theme = extendTheme({ colors, fonts });
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  useEffect(() => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
-    ReactGA.send({ hitType: "pageview", page: router.asPath });
+  // useEffect(() => {
+  //   ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
+  //   ReactGA.send({ hitType: "pageview", page: router.asPath });
 
-    const handleRouteChange = (url) => {
-      ReactGA.send({ hitType: "pageview", page: url });
-    };
+  //   const handleRouteChange = (url) => {
+  //     ReactGA.send({ hitType: "pageview", page: url });
+  //   };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+  //   router.events.on("routeChangeComplete", handleRouteChange);
 
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router]);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router]);
 
   return (
     <ChakraProvider theme={theme}>
