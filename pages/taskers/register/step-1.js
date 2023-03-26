@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import Head from "next/head";
 import Api from "lib/api";
-import Logo from "components/logo";
 import { useRouter } from "next/router";
 import {
   chakra,
@@ -69,7 +68,7 @@ export default function RegisterPage() {
       });
 
       const providerId = createProviderResponse.data.insertedId;
-      router.push(`/register/step-2?providerId=${providerId}`);
+      router.push(`/taskers/register/step-2?providerId=${providerId}`);
     } catch (e) {
       setHasError(true);
       console.error(e);
@@ -85,28 +84,49 @@ export default function RegisterPage() {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Stack mb={14} pt={5} alignItems="start">
-        <Logo />
-      </Stack>
-
-      <Stack spacing={16} alignItems="center">
+      <Stack mt={8} spacing={16} alignItems="center">
         <Stack mb={2} alignItems="center" spacing={6}>
           <Heading fontSize="30px">Let&apos;s get started</Heading>
 
-          <Stack alignItems="center" spacing={6} direction="row" divider={<Divider w="32px" h="1px" bgColor="gray.400" />}>
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800">
+          <Stack
+            alignItems="center"
+            spacing={6}
+            direction="row"
+            divider={<Divider w="32px" h="1px" bgColor="gray.400" />}
+          >
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+            >
               <Text fontWeight={600} fontSize="lg">
                 1
               </Text>
             </Center>
 
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+              opacity={0.5}
+            >
               <Text fontWeight={600} fontSize="lg">
                 2
               </Text>
             </Center>
 
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+              opacity={0.5}
+            >
               <Text fontWeight={600} fontSize="lg">
                 3
               </Text>
@@ -114,13 +134,16 @@ export default function RegisterPage() {
           </Stack>
         </Stack>
 
-        <Container maxW="container.md">
+        <Container px={{ lg: 0, md: 10, base: 10 }} maxW="container.md">
           <Heading fontWeight={600} fontSize="xl">
             Fill in your information
           </Heading>
 
           <Stack as="form" onSubmit={onSubmitForm} mt={6} spacing={4}>
-            <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 6 }}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={{ base: 4, md: 6 }}
+            >
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Name</FormLabel>
                 <Input
@@ -128,7 +151,9 @@ export default function RegisterPage() {
                   type="text"
                   placeholder="John Obi"
                   value={formValues.name}
-                  onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, name: e.target.value })
+                  }
                 />
               </FormControl>
 
@@ -138,12 +163,17 @@ export default function RegisterPage() {
                   type="tel"
                   placeholder="08012345678"
                   value={formValues.phone}
-                  onChange={(e) => setFormValues({ ...formValues, phone: e.target.value })}
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, phone: e.target.value })
+                  }
                 />
               </FormControl>
             </Stack>
 
-            <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 6 }}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={{ base: 4, md: 6 }}
+            >
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Address</FormLabel>
                 <Input
@@ -151,7 +181,9 @@ export default function RegisterPage() {
                   type="text"
                   placeholder="Oluniyi Bakara 1, off Awolowo Road, Lagos."
                   value={formValues.location}
-                  onChange={(e) => setFormValues({ ...formValues, location: e.target.value })}
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, location: e.target.value })
+                  }
                 />
               </FormControl>
 
@@ -161,16 +193,30 @@ export default function RegisterPage() {
                   type="number"
                   placeholder="4245-0696-3564"
                   value={formValues.national_id}
-                  onChange={(e) => setFormValues({ ...formValues, national_id: e.target.value })}
+                  onChange={(e) =>
+                    setFormValues({
+                      ...formValues,
+                      national_id: e.target.value,
+                    })
+                  }
                 />
               </FormControl>
             </Stack>
 
-            <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 6 }}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={{ base: 4, md: 6 }}
+            >
               <FormControl isRequired>
                 <FormLabel fontSize="sm">Profile photo</FormLabel>
 
-                <Stack role="button" direction="row" alignItems="center" spacing={4} onClick={() => filePickerRef.current.click()}>
+                <Stack
+                  role="button"
+                  direction="row"
+                  alignItems="center"
+                  spacing={4}
+                  onClick={() => filePickerRef.current.click()}
+                >
                   {file ? (
                     <chakra.div w={12}>
                       <Image
@@ -188,13 +234,28 @@ export default function RegisterPage() {
                     <Icon fontSize="3xl" as={BsPersonCircle} marginRight />
                   )}
 
-                  <Stack px={4} h={10} flexGrow="1" borderRadius="md" border="1px solid" borderColor="inherit" justifyContent="center">
+                  <Stack
+                    px={4}
+                    h={10}
+                    flexGrow="1"
+                    borderRadius="md"
+                    border="1px solid"
+                    borderColor="inherit"
+                    justifyContent="center"
+                  >
                     <Text noOfLines={1} color="chakra-placeholder-color">
                       {file ? file.name : "Click here to choose a file"}
                     </Text>
                   </Stack>
 
-                  <Input ref={filePickerRef} display="none" type="file" accept="image/*" multiple={false} onChange={onFileChange} />
+                  <Input
+                    ref={filePickerRef}
+                    display="none"
+                    type="file"
+                    accept="image/*"
+                    multiple={false}
+                    onChange={onFileChange}
+                  />
                 </Stack>
               </FormControl>
 
@@ -208,7 +269,11 @@ export default function RegisterPage() {
               spacing={{ base: 2, md: 6 }}
               py={{ base: 4, md: 0 }}
             >
-              {hasError && <Text color="red.700">Something went wrong. Please try again</Text>}
+              {hasError && (
+                <Text color="red.700">
+                  Something went wrong. Please try again
+                </Text>
+              )}
               <Button
                 px={6}
                 w={{ base: "full", md: "auto" }}

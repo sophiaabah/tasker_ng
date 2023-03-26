@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
 import Api from "lib/api";
 import Head from "next/head";
-import Logo from "components/logo";
-import { Center, Image, Text, Stack, Heading, Divider, Container, chakra, Icon } from "@chakra-ui/react";
+import {
+  Center,
+  Image,
+  Text,
+  Stack,
+  Heading,
+  Divider,
+  Container,
+  chakra,
+  Icon,
+} from "@chakra-ui/react";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineIdentification } from "react-icons/hi";
 
@@ -18,30 +27,51 @@ export default function Page({ profile }) {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Stack mb={14} pt={5} alignItems="start">
-        <Logo />
-      </Stack>
-
       <Stack spacing={16} alignItems="center">
         <Stack mb={2} alignItems="center" spacing={6} px={6}>
           <Heading textAlign="center" fontSize="30px">
             Your profile has been created!
           </Heading>
 
-          <Stack alignItems="center" spacing={6} direction="row" divider={<Divider w="32px" h="1px" bgColor="gray.400" />}>
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+          <Stack
+            alignItems="center"
+            spacing={6}
+            direction="row"
+            divider={<Divider w="32px" h="1px" bgColor="gray.400" />}
+          >
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+              opacity={0.5}
+            >
               <Text fontWeight={600} fontSize="lg">
                 1
               </Text>
             </Center>
 
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+              opacity={0.5}
+            >
               <Text fontWeight={600} fontSize="lg">
                 2
               </Text>
             </Center>
 
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800">
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+            >
               <Text fontWeight={600} fontSize="lg">
                 3
               </Text>
@@ -101,7 +131,12 @@ export default function Page({ profile }) {
                 </Stack>
               </Stack>
 
-              <Stack justifyContent="space-between" py={5} spacing={8} direction="row">
+              <Stack
+                justifyContent="space-between"
+                py={5}
+                spacing={8}
+                direction="row"
+              >
                 <Stack flex={1} spacing={1} pl={3} borderLeft="2px solid #000">
                   <Text fontWeight={500}>Tasks</Text>
                   <Text textTransform="capitalize" color="gray.600">
@@ -121,7 +156,7 @@ export default function Page({ profile }) {
               </Stack>
 
               <Stack direction="row">
-                <Stack spacing={1} pl={3} borderLeft="3px solid #000">
+                <Stack spacing={1} pl={3} borderLeft="2px solid #000">
                   <Text fontWeight={500}>Availability</Text>
                   <Text textTransform="capitalize" color="gray.600">
                     {profile?.availability_time?.join(", ")}

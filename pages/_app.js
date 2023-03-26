@@ -3,6 +3,8 @@ import { extendTheme } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
+import Navbar from "components/navbar";
+import "styles/globals.css";
 
 const colors = {
   primary: {
@@ -35,8 +37,8 @@ const colors = {
 };
 
 const fonts = {
-  heading: "Poppins, sans-serif",
-  body: "Rubik, sans-serif",
+  heading: "Domine, serif",
+  body: "Inter, sans-serif",
 };
 
 const theme = extendTheme({ colors, fonts });
@@ -61,7 +63,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />;
+      <Navbar />
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }

@@ -1,12 +1,43 @@
-import { Heading, chakra } from "@chakra-ui/react";
+import { Text, chakra, Button } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import React from "react";
 
 export default function Logo() {
+  const router = useRouter();
   return (
-    <chakra.div px={5} py={1} borderTopEndRadius="md" borderBottomEndRadius="md" bgColor="grey" w="auto">
-      <Heading pl={1} color="rgb(255 255 255 / 95%)" fontSize="2xl">
-        T<chakra.span color="secondary.300">ask</chakra.span>er
-        <chakra.span color="secondary.300">Now</chakra.span>
-      </Heading>
-    </chakra.div>
+    <chakra.svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width={{ lg: "190px", md: "170px", base: "130px" }}
+      height={{ lg: "30px", base: "30px" }}
+      fill="none"
+      viewBox="0 0 167 21"
+    >
+      <path
+        fill="#000"
+        d="M25.48 3.6H38v4.5h-1.28l-.64-3h-3.04v11.26l2.12.48V18h-6.84v-1.16l2.12-.48V5.1h-3.06l-.62 3h-1.28V3.6zm64.654 9.64h-1.62l-.34-1.88h-2.74v5.14h5.5l.56-2.96h1.76V18h-12.3v-1.16l1.88-.42V5.18l-1.88-.42V3.6h11.86v4.24h-1.64l-.58-2.78h-5.16v4.8h2.74l.34-1.9h1.62v5.28zm15.385-2.88c-.24.187-.513.367-.82.54-.293.173-.673.313-1.14.42.067.067.174.187.32.36.147.16.287.353.42.58l2.48 4.2 1.78.38V18h-4.72v-1.16l-2.62-5.14h-1.92v4.72l1.9.42V18h-6.18v-1.16l1.68-.42V5.18l-1.68-.42V3.6h7.48c.64 0 1.2.06 1.68.18.494.12.927.313 1.3.58.48.333.86.78 1.14 1.34.28.547.42 1.1.42 1.66 0 .56-.14 1.113-.42 1.66-.266.533-.633.98-1.1 1.34zm-6.22-.12h2.26c.734 0 1.34-.207 1.82-.62.267-.227.474-.527.62-.9.16-.387.24-.8.24-1.24 0-.4-.08-.76-.24-1.08a2.309 2.309 0 00-.64-.82 2.05 2.05 0 00-.8-.4 4.16 4.16 0 00-1.08-.12h-2.18v5.18z"
+      ></path>
+      <path
+        fill="#0F5520"
+        d="M48.777 16.42l-1.02-3.1h-4.88l-1.04 3.1 1.66.42V18h-5.28v-1.16l1.64-.42 4.68-13.02h2.46l4.64 13.02 1.6.42V18h-6.1v-1.16l1.64-.42zm-3.44-10.38l-1.96 5.82h3.9l-1.86-5.82h-.08zm14.13 12.18c-.76 0-1.406-.107-1.94-.32a3.907 3.907 0 01-1.4-1.06l-.22 1.16h-1.72v-4.84h1.82c.08 1.333.407 2.28.98 2.84.574.547 1.334.82 2.28.82.76 0 1.367-.16 1.82-.48.454-.32.68-.813.68-1.48 0-.547-.153-.993-.46-1.34-.293-.36-.713-.673-1.26-.94-.533-.28-1.16-.567-1.88-.86-.826-.347-1.533-.7-2.12-1.06-.586-.36-1.033-.793-1.34-1.3-.306-.507-.46-1.147-.46-1.92 0-1.293.394-2.293 1.18-3 .8-.707 1.867-1.06 3.2-1.06 1.32 0 2.394.373 3.22 1.12l.16-.9h1.72v4.84h-1.74c0-1.253-.233-2.18-.7-2.78-.466-.6-1.186-.9-2.16-.9-1.506 0-2.26.713-2.26 2.14 0 .467.094.84.28 1.12.187.28.494.54.92.78.44.24 1.034.527 1.78.86 1.12.507 2.014.98 2.68 1.42.667.44 1.14.907 1.42 1.4.294.48.44 1.047.44 1.7 0 .893-.22 1.64-.66 2.24-.44.6-1.033 1.053-1.78 1.36-.733.293-1.56.44-2.48.44zM70.493 5.18v4.88l4.7-4.88-1.82-.42V3.6h5.86v1.16l-1.76.42-4.38 4.34 5.74 6.94 1.68.38V18h-6.18v-1.16l1.32-.4-4.24-5.24-.92.88v4.34l1.68.42V18h-6.16v-1.16l1.88-.42V5.18l-1.88-.42V3.6h6.16v1.16l-1.68.42zM111.035 16.42V5.18l-1.68-.42V3.6h4.62l6.68 10.56V5.18l-1.68-.42V3.6h5.26v1.16l-1.68.42V18h-2.22l-7.4-11.48v9.9l1.68.42V18h-5.26v-1.16l1.68-.42zm28.292-5.78c0 1.107-.16 2.173-.48 3.2-.32 1.027-.827 1.9-1.52 2.62a5.469 5.469 0 01-2.06 1.32c-.8.28-1.76.42-2.88.42-1.12 0-2.08-.14-2.88-.42-.8-.28-1.473-.7-2.02-1.26-.573-.6-1.04-1.38-1.4-2.34-.347-.973-.52-2.047-.52-3.22 0-1.16.173-2.247.52-3.26.36-1.027.853-1.88 1.48-2.56.56-.6 1.233-1.04 2.02-1.32.787-.28 1.74-.42 2.86-.42 1.067 0 2.007.133 2.82.4.813.267 1.52.693 2.12 1.28a5.86 5.86 0 011.48 2.52c.307.973.46 1.987.46 3.04zm-10.86-.06c0 1.04.093 1.96.28 2.76.2.8.467 1.453.8 1.96.32.493.72.867 1.2 1.12.48.253 1.067.38 1.76.38 1.253 0 2.2-.44 2.84-1.32.347-.467.613-1.08.8-1.84.187-.76.28-1.667.28-2.72 0-1.053-.1-1.967-.3-2.74-.187-.787-.453-1.427-.8-1.92-.347-.507-.773-.88-1.28-1.12-.493-.24-1.053-.36-1.68-.36s-1.173.12-1.64.36a3.17 3.17 0 00-1.14.96c-.747.987-1.12 2.48-1.12 4.48zm26.234 4.88l2.82-10.3-1.58-.4V3.6h5.18v1.16l-1.66.42-3.7 12.82h-2.68l-2.62-8.62-2.38 8.62h-2.68l-4.1-12.82-1.56-.42V3.6h6.28v1.16l-1.92.42 2.84 10.26h.08l2.52-9.36-.18-.9-1.56-.42V3.6h5.88v1.16l-1.84.42 2.78 10.28h.08z"
+      ></path>
+      <path fill="url(#pattern0)" d="M0 0H20V20H0z"></path>
+      <defs>
+        <pattern
+          id="pattern0"
+          width="1"
+          height="1"
+          patternContentUnits="objectBoundingBox"
+        >
+          <use transform="scale(.01042)" xlinkHref="#image0_655_2"></use>
+        </pattern>
+        <image
+          id="image0_655_2"
+          width="96"
+          height="96"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEdklEQVR4nO2cz4tOURjHv6QxEkkyjPmhpuzY2FhZqFkIKYyZsLIQYSa9fiyUFAsbSjYo5deQYiE/kvgHhpXFlBL5mSLmxTQYM4+Ozltv8r733Ht+PWc8n/rW1NR7znm+95x7nueeewFBEARBEARBEIS0WKolRGAFgDKAbwBWigNhWQ/gOwDSGgWwVUwIQx+AsargVzQO4LCY4I9JOsCUoZMAJosRbpkC4JxB8Cu6DqBRTHDDdAB3cwS/oocAZooJdswC8KhA8Ct6DKBJTLBb9w/UuOma6jmARWKCHZsA/LIw4b0kbPZs0VvNoiZ8AdApM8GOIxYG/JcJWwuAfQDuAHgJYFhL/X1b/29Bjt9T+/sHliaoWVTCBEcFtV9fcVkB+QngMoBmw99uBzBkaYLScX2Tn3B0FwzQEICNhm2sBfDJgQnqImnABGKP5Y1yDECvYVvzAFxzYMJ9ADMwAVhnGXyqWqNNZ4Jim+FSV09PciyBbNf8rw6CT1VbxjwBWQ1gxLLNZwA6kCj9DoNPWhcLzECbZC3ZhK3ZwRJA/5D6zfk5+7LL0ezrTCn4FzwEn7TOF1ibbzpo9weAzWC+5l92MOXJcCZcymHEXAAfHLTLNmHrcnzDpRxLg1rnTSg5bJdVwma7z3dxVe426Oc0AG8dtssiYeuOHHyqStbULMzikON2oyZsajfymUHwSatsUMTr8HDBREvYfOzzyVLqxpzFgId2gydsC3TFkphpVJe763HCU9sfASwLFP8/NXtiqlJG33s8th0sYbvDINBUQ7cy+r7Yc/tBEraXDAJNNfTCYPn03QfvRyKHGQSaakj1rR6NAfvi7UjkSMIGNATujzoSOdW1Aa8ZBJpqSC2P9ZgdoU/OE7Yi5zL/l5swhUjYUt6GLo/YN2cJW3ugsjMVSMRamc9gZ0/YrjIIOP2lK4Z9b4lcx7JO2Hp08YuYqZzj9ERv5L4WTthi1/8pQ+P6nTGTlzw+MuhrKe+Vzzn4VDUwk5lw1FP7XmjVaxclorJBZbQlJQM41v/JwfOBwRQMWMh020kG29K2jLGdSsGA/QyCSQW11+ANe/YG3GMQSCoo9ewidGnCOW8YBJIK6lWE4pxzqj+CkZpGIpSnnZPS9pP+sR2tx9QUDHjKIJBUUGqbWY85KRjAuf5PGVJvXiZ/E97JIJBUUNszxtaVggEtnl648K1Rg+OKx1IwQHGWQUApp04bjOtRKgY0J7YbGtKvrdajzfKrK0ENUKzx1GHXGgOwymA8Bz2175VdzE0Y05sGGBzQepeiAZV3cMtMl51VDB5JBmGOPnrHYXc0CuBMjldY5zr6rkRUAyqobd4OXXUcDPSy3lfd1m3ddp7P2yhueO4fe2IOoC/ABcKeWANYE2jJZE+MAawNeKqbPaEH0Bf4mTZ7Qg2gKcANVwyokWT1Rjz/yR5fA2jT5QVfGa4YUPUcVz1MXwJggy4pDzAqkbDHdgDEXOwRAyIjBkRGDIiMGBAZMSAyYkBkxABBEARBEARBEARBEAQBAvAbYqMZkCXKlIUAAAAASUVORK5CYII="
+        ></image>
+      </defs>
+    </chakra.svg>
   );
 }

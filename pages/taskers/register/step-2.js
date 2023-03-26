@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Api from "lib/api";
-import Logo from "components/logo";
 import { useState } from "react";
 import {
   Container,
@@ -23,8 +22,26 @@ import { HiCheck } from "react-icons/hi";
 import { FiCircle } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
 
-const tasksOptions = ["cleaning", "shopping", "laundry", "cooking", "plumbing", "electrician", "mechanic", "carpentry"];
-const availablityOptions = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "public holidays"];
+const tasksOptions = [
+  "Cleaning",
+  "Shopping",
+  "Laundry",
+  "Cooking",
+  "Plumbing",
+  "Electrician",
+  "Mechanic",
+  "Carpentry",
+];
+const availablityOptions = [
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat",
+  "Sun",
+  "Public holidays",
+];
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -50,7 +67,7 @@ export default function RegisterPage() {
         price_range: priceRange.join("-"),
       });
 
-      router.push(`/register/step-3?providerId=${providerId}`);
+      router.push(`/taskers/register/step-3?providerId=${providerId}`);
     } catch (e) {
       setHasError(true);
       console.error(e);
@@ -66,28 +83,49 @@ export default function RegisterPage() {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Stack mb={14} pt={5} alignItems="start">
-        <Logo />
-      </Stack>
-
-      <Stack spacing={16} alignItems="center">
-        <Stack mb={2} alignItems="center" spacing={6}>
+      <Stack mt={8} spacing={16} alignItems="center">
+        <Stack alignItems="center" spacing={6}>
           <Heading fontSize="30px">Let&apos;s get started</Heading>
 
-          <Stack alignItems="center" spacing={6} direction="row" divider={<Divider w="32px" h="1px" bgColor="gray.400" />}>
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+          <Stack
+            alignItems="center"
+            spacing={6}
+            direction="row"
+            divider={<Divider w="32px" h="1px" bgColor="gray.400" />}
+          >
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+              opacity={0.5}
+            >
               <Text fontWeight={600} fontSize="lg">
                 1
               </Text>
             </Center>
 
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800">
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+            >
               <Text fontWeight={600} fontSize="lg">
                 2
               </Text>
             </Center>
 
-            <Center w={14} py={2} bgColor="red.100" rounded="md" color="red.800" opacity={0.5}>
+            <Center
+              w={14}
+              py={2}
+              bgColor="red.100"
+              rounded="md"
+              color="red.800"
+              opacity={0.5}
+            >
               <Text fontWeight={600} fontSize="lg">
                 3
               </Text>
@@ -95,7 +133,7 @@ export default function RegisterPage() {
           </Stack>
         </Stack>
 
-        <Container maxW="container.md">
+        <Container px={{ lg: 0, md: 10, base: 10 }} maxW="container.md">
           <chakra.section mb={10}>
             <Heading mb={4} fontWeight={600} fontSize="xl">
               What services do you offer?
@@ -115,11 +153,17 @@ export default function RegisterPage() {
                     _hover={{ bgColor: "hsl(0deg 0% 94%)" }}
                     _active={{ bgColor: "hsl(0deg 0% 92%)" }}
                     color={selectedTasks.includes(task) ? "#BD5B5B" : "#828282"}
-                    leftIcon={selectedTasks.includes(task) ? <HiCheck /> : <FiCircle />}
-                    borderColor={selectedTasks.includes(task) ? "#BD5B5B" : "transparent"}
+                    leftIcon={
+                      selectedTasks.includes(task) ? <HiCheck /> : <FiCircle />
+                    }
+                    borderColor={
+                      selectedTasks.includes(task) ? "#BD5B5B" : "transparent"
+                    }
                     onClick={() => {
                       selectedTasks.includes(task)
-                        ? setSelectedTasks(selectedTasks.filter((t) => t !== task))
+                        ? setSelectedTasks(
+                            selectedTasks.filter((t) => t !== task)
+                          )
                         : setSelectedTasks(selectedTasks.concat(task));
                     }}
                   >
@@ -139,7 +183,7 @@ export default function RegisterPage() {
               {availablityOptions.map((day) => (
                 <Checkbox
                   my={1}
-                  mr={3.5}
+                  mr={4}
                   key={day}
                   value={day}
                   fontSize="sm"
@@ -147,7 +191,9 @@ export default function RegisterPage() {
                   colorScheme="primary"
                   isChecked={availability.includes(day)}
                   onChange={(e) => {
-                    e.target.checked ? setAvailability(availability.concat(day)) : setAvailability(availability.filter((d) => d !== day));
+                    e.target.checked
+                      ? setAvailability(availability.concat(day))
+                      : setAvailability(availability.filter((d) => d !== day));
                   }}
                 >
                   {day}
@@ -179,7 +225,8 @@ export default function RegisterPage() {
               </RangeSlider>
 
               <Text color="gray.500" fontSize="sm" mt={2}>
-                From ₦{Intl.NumberFormat().format(priceRange[0])} to ₦{Intl.NumberFormat().format(priceRange[1])}
+                From ₦{Intl.NumberFormat().format(priceRange[0])} to ₦
+                {Intl.NumberFormat().format(priceRange[1])}
               </Text>
             </chakra.div>
           </chakra.section>
@@ -191,7 +238,11 @@ export default function RegisterPage() {
             spacing={{ base: 2, md: 6 }}
             py={{ base: 4, md: 0 }}
           >
-            {hasError && <Text color="red.700">Something went wrong. Please try again</Text>}
+            {hasError && (
+              <Text color="red.700">
+                Something went wrong. Please try again
+              </Text>
+            )}
 
             <Button
               px={6}
