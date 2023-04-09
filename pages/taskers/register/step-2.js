@@ -84,8 +84,10 @@ export default function RegisterPage() {
       </Head>
 
       <Stack mt={8} spacing={8} alignItems="center">
-        <Stack alignItems="center" spacing={6}>
-          <Heading fontSize="30px">Let&apos;s get started</Heading>
+        <Stack mb={2} alignItems="center" spacing={6}>
+          <Heading fontSize={{ lg: "30px", base: "20px" }}>
+            Let&apos;s get started
+          </Heading>
 
           <Stack
             alignItems="center"
@@ -94,39 +96,39 @@ export default function RegisterPage() {
             divider={<Divider w="32px" h="1px" bgColor="gray.400" />}
           >
             <Center
-              w={14}
-              py={2}
+              w={{ lg: 14, base: 8 }}
+              py={{ lg: 2, base: 1 }}
               bgColor="red.100"
               rounded="md"
               color="red.800"
               opacity={0.5}
             >
-              <Text fontWeight={600} fontSize="lg">
+              <Text fontWeight={600} fontSize={{ lg: "lg", base: "md" }}>
                 1
               </Text>
             </Center>
 
             <Center
-              w={14}
-              py={2}
+              w={{ lg: 14, base: 8 }}
+              py={{ lg: 2, base: 1 }}
               bgColor="red.100"
               rounded="md"
               color="red.800"
             >
-              <Text fontWeight={600} fontSize="lg">
+              <Text fontWeight={600} fontSize={{ lg: "lg", base: "md" }}>
                 2
               </Text>
             </Center>
 
             <Center
-              w={14}
-              py={2}
+              w={{ lg: 14, base: 8 }}
+              py={{ lg: 2, base: 1 }}
               bgColor="red.100"
               rounded="md"
               color="red.800"
               opacity={0.5}
             >
-              <Text fontWeight={600} fontSize="lg">
+              <Text fontWeight={600} fontSize={{ lg: "lg", base: "md" }}>
                 3
               </Text>
             </Center>

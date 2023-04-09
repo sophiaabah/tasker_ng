@@ -28,8 +28,8 @@ export default function Page({ profile }) {
       </Head>
 
       <Stack spacing={8} alignItems="center">
-        <Stack my={4} alignItems="center" spacing={6} px={6}>
-          <Heading textAlign="center" fontSize="30px">
+        <Stack mb={2} alignItems="center" spacing={6}>
+          <Heading fontSize={{ lg: "30px", base: "20px" }}>
             Your profile has been created!
           </Heading>
 
@@ -40,39 +40,39 @@ export default function Page({ profile }) {
             divider={<Divider w="32px" h="1px" bgColor="gray.400" />}
           >
             <Center
-              w={14}
-              py={2}
+              w={{ lg: 14, base: 8 }}
+              py={{ lg: 2, base: 1 }}
               bgColor="red.100"
               rounded="md"
               color="red.800"
               opacity={0.5}
             >
-              <Text fontWeight={600} fontSize="lg">
+              <Text fontWeight={600} fontSize={{ lg: "lg", base: "md" }}>
                 1
               </Text>
             </Center>
 
             <Center
-              w={14}
-              py={2}
+              w={{ lg: 14, base: 8 }}
+              py={{ lg: 2, base: 1 }}
               bgColor="red.100"
               rounded="md"
               color="red.800"
               opacity={0.5}
             >
-              <Text fontWeight={600} fontSize="lg">
+              <Text fontWeight={600} fontSize={{ lg: "lg", base: "md" }}>
                 2
               </Text>
             </Center>
 
             <Center
-              w={14}
-              py={2}
+              w={{ lg: 14, base: 8 }}
+              py={{ lg: 2, base: 1 }}
               bgColor="red.100"
               rounded="md"
               color="red.800"
             >
-              <Text fontWeight={600} fontSize="lg">
+              <Text fontWeight={600} fontSize={{ lg: "lg", base: "md" }}>
                 3
               </Text>
             </Center>

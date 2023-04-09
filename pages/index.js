@@ -34,11 +34,11 @@ export default function App() {
         <meta name="description" content="Everyday life made easier" />
         <title>Tasker | Everyday life made easier </title>
       </Head>
-      <Container my={{ lg: 14, md: 10, base: 3 }} maxW="fit-content">
+      <Container my={{ lg: 14, md: 10, base: 2 }} maxW="fit-content">
         <Stack
           spacing={{ lg: 28, md: 16, base: 16 }}
           maxW="100%"
-          px={{ md: 22, base: 6 }}
+          px={{ md: 22, base: 4 }}
           direction="column"
           py={10}
         >
@@ -137,24 +137,24 @@ export default function App() {
                 Start making the most of your time.
               </Heading>
               <Text
-                fontSize={{ md: "1.3rem", base: "lg" }}
+                fontSize={{ md: "1.3rem", base: "md" }}
                 color="rgb(0 0 0 / 65%)"
               >
                 When life gets busy, you don’t have to tackle it alone. Get back
                 time for what you love without breaking the bank.
               </Text>
               <List color="rgb(0 0 0 / 65%)" spacing={3}>
-                <ListItem fontSize={{ md: "xl", base: "lg" }}>
+                <ListItem fontSize={{ md: "xl", base: "md" }}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   Choose your tasker by location, reviews, skills, and price.
                 </ListItem>
 
-                <ListItem fontSize={{ md: "xl", base: "lg" }}>
+                <ListItem fontSize={{ md: "xl", base: "md" }}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   Chat with your tasker and schedule when it works for you.
                 </ListItem>
 
-                <ListItem fontSize={{ md: "xl", base: "lg" }}>
+                <ListItem fontSize={{ md: "xl", base: "md" }}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   Pay, tip, and review all through one platform.{" "}
                 </ListItem>
@@ -175,26 +175,26 @@ export default function App() {
               direction="column"
               // mx={{ md: 10 }}
             >
-              <Heading fontSize="2.75rem">
+              <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
                 Build A Trusted Team For all household tasks.
               </Heading>
               <Text
                 color="rgb(0 0 0 / 65%)"
-                fontSize={{ md: "1.3rem", base: "lg" }}
+                fontSize={{ md: "1.3rem", base: "md" }}
               >
                 Build a team of local, background-checked taskers to help with
                 whatever you need, they’ve got it covered.
               </Text>
               <List color="rgb(0 0 0 / 65%)" spacing={3}>
-                <ListItem fontSize={{ md: "xl", base: "lg" }}>
+                <ListItem fontSize={{ md: "xl", base: "md" }}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   Get a wide range of taskers to make a better selection.
                 </ListItem>
-                <ListItem fontSize={{ md: "xl", base: "lg" }}>
+                <ListItem fontSize={{ md: "xl", base: "md" }}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   Compare them by reviews, ratings, and prices.
                 </ListItem>
-                <ListItem fontSize={{ md: "xl", base: "lg" }}>
+                <ListItem fontSize={{ md: "xl", base: "md" }}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   Choose and connect with the best person for the job.
                 </ListItem>

@@ -59,7 +59,7 @@ export default function App({ searchResults, customerId }) {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Container my={14} maxW="container.md">
+      <Container mt={{ lg: 14, base: 6 }} maxW="container.md">
         {isSelected ? (
           <>
             <Heading fontSize={{ lg: "3xl", md: "3xl", base: "2xl" }}>
@@ -71,7 +71,6 @@ export default function App({ searchResults, customerId }) {
           </>
         ) : (
           <>
-            <Heading fontSize="2xl">Select a tasker </Heading>
             {hasError && (
               <Text
                 fontSize={{ lg: "1rem", md: "1rem", base: "0.85rem" }}
@@ -81,117 +80,130 @@ export default function App({ searchResults, customerId }) {
                 Something went wrong. Please try again
               </Text>
             )}
+            {!searchResults.length && (
+              <>
+                <Heading fontSize={{ lg: "3xl", md: "3xl", base: "2xl" }}>
+                  Oops.
+                </Heading>
+                <Text fontSize={{ lg: "1rem", md: "1rem", base: "0.85rem" }}>
+                  There are no available taskers for your task at the moment.{" "}
+                </Text>
+              </>
+            )}
             {searchResults.map((tasker, index) => {
               return (
-                <Stack
-                  borderRadius="lg"
-                  px={{ lg: 8, base: 5 }}
-                  py={{ lg: 5, base: 4 }}
-                  border="1px solid #e5e7eb"
-                  mt={6}
-                  key={index}
-                >
-                  <Stack direction="row" justify="space-between" spacing={7}>
-                    <Stack spacing={3.5} direction="row">
-                      <Image
-                        alt="profile pic"
-                        rounded="full"
-                        boxSize={{ lg: "52px", base: "42px" }}
-                        src={getImageUrl(tasker?.photo)}
-                        alignSelf="center"
-                        objectFit="cover"
-                      />
-                      <Stack
-                        maxW={{ lg: "90%", md: "90%", base: "95%" }}
-                        alignSelf="center"
-                        spacing={0}
-                      >
-                        <Stack spacing={2} direction="row">
-                          <Text
-                            fontWeight={{ lg: 700, md: 700, base: 600 }}
-                            fontSize={{
-                              lg: "1.2rem",
-                              md: "1.2rem",
-                              base: "1rem",
-                            }}
-                            w="fit-content"
-                          >
-                            {tasker?.name}
-                            <chakra.span ml={1.5}>
-                              <Icon
-                                as={MdCheckCircle}
-                                fontSize="sm"
-                                color="green.500"
-                              />
-                            </chakra.span>
-                          </Text>
+                <>
+                  <Heading fontSize="2xl">Select a tasker </Heading>
+                  <Stack
+                    borderRadius="lg"
+                    px={{ lg: 8, base: 5 }}
+                    py={{ lg: 5, base: 4 }}
+                    border="1px solid #e5e7eb"
+                    mt={6}
+                    key={index}
+                  >
+                    <Stack direction="row" justify="space-between" spacing={7}>
+                      <Stack spacing={3.5} direction="row">
+                        <Image
+                          alt="profile pic"
+                          rounded="full"
+                          boxSize={{ lg: "52px", base: "42px" }}
+                          src={getImageUrl(tasker?.photo)}
+                          alignSelf="center"
+                          objectFit="cover"
+                        />
+                        <Stack
+                          maxW={{ lg: "90%", md: "90%", base: "95%" }}
+                          alignSelf="center"
+                          spacing={0}
+                        >
+                          <Stack spacing={2} direction="row">
+                            <Text
+                              fontWeight={{ lg: 700, md: 700, base: 600 }}
+                              fontSize={{
+                                lg: "1.2rem",
+                                md: "1.2rem",
+                                base: "1rem",
+                              }}
+                              w="fit-content"
+                            >
+                              {tasker?.name}
+                              <chakra.span ml={1.5}>
+                                <Icon
+                                  as={MdCheckCircle}
+                                  fontSize="sm"
+                                  color="green.500"
+                                />
+                              </chakra.span>
+                            </Text>
+                          </Stack>
                         </Stack>
+                      </Stack>
+                      <Stack
+                        justify="flex-end"
+                        width="min-content"
+                        spacing={0}
+                        alignSelf="center"
+                      >
+                        <Text color="gray" fontSize={{ lg: "sm", base: "xs" }}>
+                          from{" "}
+                          <chakra.span
+                            color="black"
+                            fontSize={{ lg: "lg", base: "md" }}
+                            fontWeight={700}
+                          >
+                            {`₦${tasker?.price_range.split("-")[0]}`}
+                          </chakra.span>
+                        </Text>
                       </Stack>
                     </Stack>
                     <Stack
-                      justify="flex-end"
-                      width="min-content"
-                      spacing={0}
-                      alignSelf="center"
+                      alignItems="baseline"
+                      pt={2}
+                      pb={3}
+                      spacing={{ lg: 0, md: 0, base: 5 }}
+                      direction="row"
                     >
-                      <Text color="gray" fontSize={{ lg: "sm", base: "xs" }}>
-                        from{" "}
-                        <chakra.span
-                          color="black"
-                          fontSize={{ lg: "lg", base: "md" }}
-                          fontWeight={700}
-                        >
-                          {`₦${tasker?.price_range.split("-")[0]}`}
-                        </chakra.span>
-                      </Text>
+                      <chakra.div
+                        pl={2}
+                        borderLeft="1.5px solid black"
+                        width={{ lg: "90%", md: "90%", base: "200px" }}
+                        fontSize={{ lg: "md", md: "md", base: "0.8rem" }}
+                      >
+                        <Text fontWeight={600}>Availability</Text>
+
+                        <Text color="gray.600" textTransform="capitalize">
+                          {tasker.availability_time.join(", ")}
+                        </Text>
+                      </chakra.div>
+
+                      <chakra.div
+                        pl={2}
+                        borderLeft="1.5px solid black"
+                        width={{ lg: "90%", md: "90%", base: "200px" }}
+                        fontSize={{ lg: "md", md: "md", base: "0.8rem" }}
+                      >
+                        <Text fontWeight={600}>Tasks</Text>
+
+                        <Text color="gray.600" textTransform="capitalize">
+                          {tasker.tasks.join(", ")}
+                        </Text>
+                      </chakra.div>
                     </Stack>
-                  </Stack>
-                  <Stack
-                    alignItems="baseline"
-                    pt={2}
-                    pb={3}
-                    spacing={{ lg: 0, md: 0, base: 5 }}
-                    direction="row"
-                  >
-                    <chakra.div
-                      pl={2}
-                      borderLeft="1.5px solid black"
-                      width={{ lg: "90%", md: "90%", base: "200px" }}
-                      fontSize={{ lg: "md", md: "md", base: "0.8rem" }}
+                    <Button
+                      fontWeight={500}
+                      size="sm"
+                      variant={{ lg: "solid", base: "outline" }}
+                      colorScheme="primary"
+                      alignSelf="flex-end"
+                      // isLoading={isLoading}
+                      // disabled={isLoading}
+                      onClick={() => selectTasker(tasker.id)}
                     >
-                      <Text fontWeight={600}>Availability</Text>
-
-                      <Text color="gray.600" textTransform="capitalize">
-                        {tasker.availability_time.join(", ")}
-                      </Text>
-                    </chakra.div>
-
-                    <chakra.div
-                      pl={2}
-                      borderLeft="1.5px solid black"
-                      width={{ lg: "90%", md: "90%", base: "200px" }}
-                      fontSize={{ lg: "md", md: "md", base: "0.8rem" }}
-                    >
-                      <Text fontWeight={600}>Tasks</Text>
-
-                      <Text color="gray.600" textTransform="capitalize">
-                        {tasker.tasks.join(", ")}
-                      </Text>
-                    </chakra.div>
+                      Select Tasker
+                    </Button>
                   </Stack>
-                  <Button
-                    fontWeight={500}
-                    size="sm"
-                    variant={{ lg: "solid", base: "outline" }}
-                    colorScheme="primary"
-                    alignSelf="flex-end"
-                    // isLoading={isLoading}
-                    // disabled={isLoading}
-                    onClick={() => selectTasker(tasker.id)}
-                  >
-                    Select Tasker
-                  </Button>
-                </Stack>
+                </>
               );
             })}
           </>

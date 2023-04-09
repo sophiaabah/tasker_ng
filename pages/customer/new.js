@@ -77,7 +77,7 @@ export default function RegisterPage() {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Stack mt={14} spacing={16} alignItems="center">
+      <Stack mt={{ lg: 14, base: 6 }} spacing={16} alignItems="center">
         <Container px={{ lg: 0, md: 10, base: 10 }} maxW="container.md">
           <Stack></Stack>
           <Heading fontWeight={600} fontSize="xl" mb={6}>
