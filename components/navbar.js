@@ -24,41 +24,6 @@ export default function Navbar() {
           <Logo />
         </a>
       </Link>
-
-      <Stack
-        spacing={4}
-        alignItems="center"
-        direction="row"
-        justifySelf="flex-end"
-      >
-        <Button
-          bgColor="primary.50"
-          color="primary.600"
-          _hover={{
-            bgColor: "primary.100",
-            color: "primary.600",
-          }}
-          _active={{
-            bgColor: "primary.100",
-            color: "primary.600",
-          }}
-          fontWeight={500}
-          fontSize={{ lg: "sm", base: "xs" }}
-          onClick={() => router.push("/taskers/register/step-1")}
-        >
-          Become a Tasker
-        </Button>
-        <Button
-          colorScheme="primary"
-          py={0}
-          fontWeight={500}
-          display={{ lg: "block", md: "block", base: "none" }}
-          fontSize={{ lg: "sm", md: "sm", base: "xs" }}
-          onClick={() => router.push("/customer/new")}
-        >
-          Find a Tasker
-        </Button>
-      </Stack>
     </Stack>
   );
 }

@@ -90,10 +90,10 @@ export default function App({ searchResults, customerId }) {
                 </Text>
               </>
             )}
+            <Heading fontSize="2xl">Select a tasker </Heading>
             {searchResults.map((tasker, index) => {
               return (
                 <>
-                  <Heading fontSize="2xl">Select a tasker </Heading>
                   <Stack
                     borderRadius="lg"
                     px={{ lg: 8, base: 5 }}
