@@ -1,30 +1,10 @@
-import {
-  Flex,
-  Image,
-  Spacer,
-  List,
-  ListItem,
-  ListIcon,
-  Input,
-  HStack,
-  Button,
-  Text,
-  Stack,
-  Heading,
-  Checkbox,
-  FormLabel,
-  Container,
-  IconButton,
-  chakra,
-  FormControl,
-  Icon,
-} from "@chakra-ui/react";
+import { Image, List, ListItem, ListIcon, Button, Text, Stack, Heading, Container, IconButton, chakra } from "@chakra-ui/react";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
+import React from "react";
 import { useRouter } from "next/router";
 import { MdCheckCircle } from "react-icons/md";
 import { BsTwitter, BsFacebook, BsInstagram } from "react-icons/bs";
+import Navbar from "components/navbar";
 
 export default function App() {
   const router = useRouter();
@@ -34,14 +14,11 @@ export default function App() {
         <meta name="description" content="Everyday life made easier" />
         <title>Tasker | Everyday life made easier </title>
       </Head>
+
       <Container my={{ lg: 14, md: 10, base: 2 }} maxW="fit-content">
-        <Stack
-          spacing={{ lg: 28, md: 16, base: 16 }}
-          maxW="100%"
-          px={{ md: 22, base: 4 }}
-          direction="column"
-          py={10}
-        >
+        <Navbar />
+
+        <Stack spacing={{ lg: 28, md: 16, base: 16 }} maxW="100%" px={{ md: 22, base: 4 }} direction="column" py={10}>
           <Stack
             direction={{
               lg: "row",
@@ -58,60 +35,25 @@ export default function App() {
               justifySelf="flex-start"
               textAlign={{ base: "center", md: "left" }}
             >
-              <Heading
-                overflow="hidden"
-                fontWeight={800}
-                fontSize={{ lg: "7xl", base: "4xl" }}
-              >
-                <chakra.span
-                  animation="750ms cubic-bezier(0.65, 0, 0.35, 1) slideIn 0s both 1"
-                  lineHeight="100%"
-                  display="inline-block"
-                  // whiteSpace="nowrap"
-                >
+              <Heading overflow="hidden" fontWeight={800} fontSize={{ lg: "7xl", base: "4xl" }}>
+                <chakra.span animation="750ms cubic-bezier(0.65, 0, 0.35, 1) slideIn 0s both 1" lineHeight="100%" display="inline-block">
                   Everyday life{" "}
                 </chakra.span>
-                <chakra.span
-                  animation="750ms cubic-bezier(0.65, 0, 0.35, 1) slideIn 150ms both 1"
-                  lineHeight="100%"
-                  display="inline-block"
-                  // whiteSpace="nowrap"
-                >
+                <chakra.span animation="750ms cubic-bezier(0.65, 0, 0.35, 1) slideIn 150ms both 1" lineHeight="100%" display="inline-block">
                   made <chakra.span color="green.400">easier.</chakra.span>
                 </chakra.span>
               </Heading>
               <Text pb={4} fontWeight={400} fontSize="xl">
-                Connect with highly verified taskers around your location for
-                all your household needs with one click.
+                Connect with highly verified taskers around your location for all your household needs with one click.
               </Text>
-              <Stack
-                justify={{ lg: "flex-start", md: "flex-start", base: "center" }}
-                direction="row"
-                spacing={3}
-              >
-                <Button
-                  colorScheme="primary"
-                  py={0}
-                  fontWeight={500}
-                  fontSize="sm"
-                  onClick={() => router.push("/customer/new")}
-                >
+              <Stack justify={{ lg: "flex-start", md: "flex-start", base: "center" }} direction="row" spacing={3}>
+                <Button colorScheme="primary" py={0} fontWeight={500} size="lg" onClick={() => router.push("/customer/new")}>
                   Find a Tasker
                 </Button>
               </Stack>
             </Stack>
-            <Stack
-              alignSelf={{ base: "center" }}
-              boxSize={{ lg: "sm", md: "sm", base: "xs" }}
-              direction="row"
-              spacing={3}
-            >
-              <Image
-                borderTopRadius="50%"
-                objectFit="cover"
-                alt=""
-                src="/images/hero2.jpg"
-              />
+            <Stack alignSelf={{ base: "center" }} boxSize={{ lg: "sm", md: "sm", base: "xs" }} direction="row" spacing={3}>
+              <Image borderTopRadius="50%" objectFit="cover" alt="" src="/images/hero2.jpg" />
             </Stack>
           </Stack>
           <Stack
@@ -133,15 +75,9 @@ export default function App() {
               spacing={{ md: 6, base: 5 }}
               alignSelf={{ lg: "center", md: "center", base: "start" }}
             >
-              <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
-                Start making the most of your time.
-              </Heading>
-              <Text
-                fontSize={{ md: "1.3rem", base: "md" }}
-                color="rgb(0 0 0 / 65%)"
-              >
-                When life gets busy, you don’t have to tackle it alone. Get back
-                time for what you love without breaking the bank.
+              <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>Start making the most of your time.</Heading>
+              <Text fontSize={{ md: "1.3rem", base: "md" }} color="rgb(0 0 0 / 65%)">
+                When life gets busy, you don’t have to tackle it alone. Get back time for what you love without breaking the bank.
               </Text>
               <List color="rgb(0 0 0 / 65%)" spacing={3}>
                 <ListItem fontSize={{ md: "xl", base: "md" }}>
@@ -175,15 +111,9 @@ export default function App() {
               direction="column"
               // mx={{ md: 10 }}
             >
-              <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>
-                Build A Trusted Team For all household tasks.
-              </Heading>
-              <Text
-                color="rgb(0 0 0 / 65%)"
-                fontSize={{ md: "1.3rem", base: "md" }}
-              >
-                Build a team of local, background-checked taskers to help with
-                whatever you need, they’ve got it covered.
+              <Heading fontSize={{ md: "2.75rem", base: "2.5rem" }}>Build A Trusted Team For all household tasks.</Heading>
+              <Text color="rgb(0 0 0 / 65%)" fontSize={{ md: "1.3rem", base: "md" }}>
+                Build a team of local, background-checked taskers to help with whatever you need, they’ve got it covered.
               </Text>
               <List color="rgb(0 0 0 / 65%)" spacing={3}>
                 <ListItem fontSize={{ md: "xl", base: "md" }}>
@@ -219,12 +149,7 @@ export default function App() {
             <IconButton variant="ghost" icon={<BsInstagram />}></IconButton>
             <IconButton variant="ghost" icon={<BsFacebook />}></IconButton>
           </Stack>
-          <Text
-            color="rgb(0 0 0 / 55%)"
-            textAlign="center"
-            fontSize="sm"
-            pb={2}
-          >
+          <Text color="rgb(0 0 0 / 55%)" textAlign="center" fontSize="sm" pb={2}>
             All rights reserved.
           </Text>
         </Stack>
