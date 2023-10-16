@@ -15,10 +15,8 @@ export default function App() {
         <title>Tasker | Everyday life made easier </title>
       </Head>
 
-      <Container my={{ lg: 14, md: 10, base: 2 }} maxW="fit-content">
-        <Navbar />
-
-        <Stack spacing={{ lg: 28, md: 16, base: 16 }} maxW="100%" px={{ md: 22, base: 4 }} direction="column" py={10}>
+      <Container maxW="container.xl">
+        <Stack spacing={{ lg: 28, md: 16, base: 16 }} maxW="100%" px={{ md: 22, base: 4 }} direction="column">
           <Stack
             direction={{
               lg: "row",
